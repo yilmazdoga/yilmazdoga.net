@@ -3,15 +3,16 @@ title: "About"
 permalink: /about
 ---
 
-##EDUCATION
+Doğa Yılmaz is an undergraduate computer science student currently studying at Ozyegin University.
 
-Ozyegin University
-BSc: Computer Engineering
+**EDUCATION**
 
-##EXPERIENCE
+**BSc. Computer Engineering --- Ozyegin University**<br/>[2016 - Present]<br/>
 
-Software Developer Intern - Augmea Simulation and VR Technologies
+**EXPERIENCE**
+
+**Software Developer Intern --- Augmea Simulation and VR Technologies**<br/>[06/2019 - 07/2019]<br/>
 Worked on VR training simulator for oculus go, using Unity.
 
-Software Developer Intern - Preksis Information Technologies
+**Software Developer Intern --- Preksis Information Technologies**<br/>[07/2018 - 08/2018]<br/>
 Developed JavaScript microservices for an ongoing project.
