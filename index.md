@@ -1,8 +1,11 @@
 ---
 layout: single
 author_profile: true
-title: "About"
+title: "Home"
 ---
+
+## About
+
 Doğa Yılmaz is an undergraduate computer science student currently studying at Ozyegin University.
 <br/>
 
