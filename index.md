@@ -11,7 +11,7 @@ Doğa Yılmaz is an undergraduate computer science student currently studying at
 
 ## Education
 
-**BSc. Computer Engineering --- Ozyegin University**<br/>[2016 - Present]<br/>
+**BSc. Computer Science --- Ozyegin University**<br/>[2016 - Present]<br/>
 <br/>
 
 ## Experience
