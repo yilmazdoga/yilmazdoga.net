@@ -17,7 +17,7 @@ Doğa Yılmaz is an undergraduate computer science student currently studying at
 
 ## Experience
 
-**Software Developer Intern ---** [**Augmea Simulation and VR Technologies**](http://augmea.com "Augmea")
+**Software Developer Intern ---** [**Augmea Simulation and VR Technologies**](http://augmea.com "Augmea Inc.")
 <br/>[06/2019 - 07/2019]<br/>
 Worked on VR training simulator for oculus go, using Unity.
 
