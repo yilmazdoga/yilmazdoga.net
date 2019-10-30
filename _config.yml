@@ -71,6 +71,9 @@ author:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/_yilmazdoga_"
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://spotify.com"
 
 footer:
   links:
