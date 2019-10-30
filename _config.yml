@@ -73,7 +73,7 @@ author:
       url: "https://twitter.com/_yilmazdoga_"
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
-      url: "https://spotify.com"
+      url: "https://open.spotify.com/user/yilmaz.doga"
 
 footer:
   links:
@@ -86,6 +86,9 @@ footer:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/_yilmazdoga_"
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/user/yilmaz.doga"  
 
 defaults:
   # _posts
