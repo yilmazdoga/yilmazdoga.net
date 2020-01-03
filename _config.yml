@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Doğa Yılmaz"
   avatar : "/assets/images/pp.jpg"
-  bio    : "Computer science student"
+  bio    : ""
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
