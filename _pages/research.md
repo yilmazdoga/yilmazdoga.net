@@ -3,7 +3,7 @@ title: "Research Studies"
 permalink: /research
 ---
 <br/>
-**Undergraduate Researcher ---** [**Ozyegin University Video, Vision and Graphics Lab**](http://vvgl.ozyegin.edu.tr "Ozyegin University VVGL")
+**Undergraduate Researcher ---** [**Ozyegin University Vision and Graphics Lab**](http://vvgl.ozyegin.edu.tr "Ozyegin University VVGL")
 <br/>[02/2020 - Present]<br/>
 Working on Deformable Partial CNN.
 <br/>[07/2019 - 09/2019]<br/>
