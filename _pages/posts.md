@@ -1,5 +1,6 @@
 ---
-title: "EDU 201"
-permalink: /edu201/
+title: "Posts by Year"
+permalink: /posts/
 layout: posts
+author_profile: true
 ---
