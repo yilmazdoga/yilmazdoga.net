@@ -6,7 +6,7 @@ title: "Home"
 
 ## About
 
-Doğa Yılmaz is a senior computer science student at Özyeğin University. He is currently working on denoising autoencoders.
+Doğa Yılmaz is a senior computer science student at Ozyegin University. He is currently working on denoising autoencoders.
 <br/>
 
 ## Education
@@ -23,5 +23,5 @@ Worked on VR training simulator for oculus go, using Unity.
 
 **Software Developer Intern ---** [**Preksis Information Technologies**](http://www.preksis.com/About.aspx "Preksis Information Technologies")
 <br/>[07/2018 - 08/2018]<br/>
-Developed JavaScript microservices for an ongoing project.
+Developed microservices for an ongoing project.
 <br/>
