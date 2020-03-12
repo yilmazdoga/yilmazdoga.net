@@ -3,7 +3,7 @@ title: "Projects"
 permalink: /projects
 ---
 <br/>
-**Image Denoising Using Autoencoders**
+[**Image Denoising Using Autoencoders**](/inprogress)
 <br/>[10/2019 - Present]<br/>
 In progress.
 
