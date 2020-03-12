@@ -1,6 +1,5 @@
 ---
 title: "In Progress"
-sitemap: true
 permalink: /inprogress
 ---
 
