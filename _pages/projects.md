@@ -4,8 +4,8 @@ permalink: /projects
 ---
 <br/>
 [**Image Denoising Using Autoencoders**](/inprogress)
-<br/>[10/2019 - Present]<br/>
-In progress.
+<br/>[10/2019 - 06/2020]<br/>
+Soon.
 
 <br/>
 [**Very Simple OS**](https://github.com/yilmazdoga/Very_Simple_OS "Very_Simple_OS Github")
