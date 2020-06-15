@@ -12,5 +12,5 @@ Doğa Yılmaz is a senior computer science student at Ozyegin University. He is 
 ## Education
 
 **BSc. Computer Science ---** [**Ozyegin University**](https://www.ozyegin.edu.tr/en/computer-science-department "Ozyegin University CS")
-<br/>[2016 - Present]<br/>
+<br/>[2016 - 2020]<br/>
 <br/>
