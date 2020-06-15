@@ -6,7 +6,7 @@ title: "Home"
 
 ## About
 
-Doğa Yılmaz is a senior computer science student at Ozyegin University. He is currently working on denoising autoencoders.
+Doğa Yılmaz is a senior computer science student at Ozyegin University. He is currently working on denoising autoencoders. (TODO update this)
 <br/>
 
 ## Education
