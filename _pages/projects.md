@@ -3,7 +3,7 @@ title: "Projects"
 permalink: /projects
 ---
 <br/>
-[**Image Denoising Using Autoencoders**](/inprogress)
+[**Image Denoising Using Autoencoders**](https://yilmazdoga.github.io/image_denoising_using_autoencoders/)
 <br/>[10/2019 - 06/2020]<br/>
 Soon. (TODO update this.)
 
