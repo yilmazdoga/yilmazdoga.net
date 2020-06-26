@@ -9,7 +9,7 @@ This project aims to study and implement several deep neural network based denoi
 
 <br/>
 [**Image Classification with Bag of Features**](https://github.com/yilmazdoga/image_classification_with_bag_of_features)
-<br/>[10/2019 - 06/2020]<br/>
+<br/>[4/2020 - 06/2020]<br/>
 This project aims to classify the given 4-class dataset using bag of features.
 
 <br/>
