@@ -5,7 +5,7 @@ permalink: /projects
 <br/>
 [**Image Denoising Using Autoencoders**](https://yilmazdoga.github.io/image_denoising_using_autoencoders/)
 <br/>[10/2019 - 06/2020]<br/>
-Soon. (TODO update this.)
+This project aims to study and implement several deep neural network based denoising methods in order to understand their working principles and comparing the performance of autoencoder based deep models with the state-of-the-art methods.
 
 <br/>
 [**Very Simple OS**](https://github.com/yilmazdoga/Very_Simple_OS "Very_Simple_OS Github")
