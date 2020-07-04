@@ -6,7 +6,7 @@ title: ""
 
 ## About
 
-Doğa Yılmaz is a senior computer science student at Ozyegin University. He is currently working on low-light image enhancement.
+Doğa Yılmaz is a senior computer science student at Ozyegin University. He is currently working on low-light image enhancement.<br/>
 <br/>
 
 ## Education
@@ -20,10 +20,9 @@ Doğa Yılmaz is a senior computer science student at Ozyegin University. He is 
 <br/>
 **Undergraduate Researcher ---** [**Ozyegin University Vision and Graphics Lab**](http://vvgl.ozyegin.edu.tr "Ozyegin University VGL")
 <br/>[06/2020 - Present]<br/>
-Working on low-light image enhancement.
-<br/>
+Working on low-light image enhancement.<br/>
 <br/>[07/2019 - 09/2019]<br/>
-Worked on dataset generation using blender3D.
+Worked on dataset generation using blender3D.<br/>
 <br/>
 
 ## Projects
@@ -41,7 +40,7 @@ This project aims to classify the given 4-class dataset using bag of features.
 <br/>
 [**Very Simple OS**](https://github.com/yilmazdoga/Very_Simple_OS "Very_Simple_OS Github")
 <br/>[06/2019]<br/>
-The aim of this project is to replicate early modern operating systems and develop a minimal OS which runs on the Very Simple CPU developed in Ozyegin University by Dr. H. Fatih Uğurdağ.
+The aim of this project is to replicate early modern operating systems and develop a minimal OS which runs on the Very Simple CPU developed in Ozyegin University by Dr. H. Fatih Uğurdağ.<br/>
 <br/>
 
 ## Experience
@@ -54,5 +53,5 @@ Worked on VR training simulator for oculus go using Unity.
 <br/>
 **Software Developer Intern ---** [**Preksis Information Technologies**](http://www.preksis.com/About.aspx "Preksis Information Technologies")
 <br/>[07/2018 - 08/2018]<br/>
-Developed microservices for an ongoing project.
+Developed microservices for an ongoing project.<br/>
 <br/>
