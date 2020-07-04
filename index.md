@@ -24,6 +24,7 @@ Working on low-light image enhancement.
 <br/>
 <br/>[07/2019 - 09/2019]<br/>
 Worked on dataset generation using blender3D.
+<br/>
 
 ## Projects
 
@@ -41,6 +42,7 @@ This project aims to classify the given 4-class dataset using bag of features.
 [**Very Simple OS**](https://github.com/yilmazdoga/Very_Simple_OS "Very_Simple_OS Github")
 <br/>[06/2019]<br/>
 The aim of this project is to replicate early modern operating systems and develop a minimal OS which runs on the Very Simple CPU developed in Ozyegin University by Dr. H. Fatih Uğurdağ.
+<br/>
 
 ## Experience
 
@@ -53,3 +55,4 @@ Worked on VR training simulator for oculus go using Unity.
 **Software Developer Intern ---** [**Preksis Information Technologies**](http://www.preksis.com/About.aspx "Preksis Information Technologies")
 <br/>[07/2018 - 08/2018]<br/>
 Developed microservices for an ongoing project.
+<br/>
