@@ -27,7 +27,6 @@ Worked on dataset generation using blender3D.<br/>
 
 ## Projects
 
-
 <br/>
 [**Image Denoising Using Autoencoders**](https://yilmazdoga.github.io/image_denoising_using_autoencoders/)
 <br/>[10/2019 - 06/2020]<br/>
