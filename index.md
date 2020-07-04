@@ -14,3 +14,42 @@ Doğa Yılmaz is a senior computer science student at Ozyegin University. He is 
 **BSc. Computer Science ---** [**Ozyegin University**](https://www.ozyegin.edu.tr/en/computer-science-department "Ozyegin University CS")
 <br/>[2016 - 2020]<br/>
 <br/>
+
+## Research Studies
+
+<br/>
+**Undergraduate Researcher ---** [**Ozyegin University Vision and Graphics Lab**](http://vvgl.ozyegin.edu.tr "Ozyegin University VGL")
+<br/>[06/2020 - Present]<br/>
+Working on low-light image enhancement.
+<br/>
+<br/>[07/2019 - 09/2019]<br/>
+Worked on dataset generation using blender3D.
+
+## Projects
+
+<br/>
+[**Image Denoising Using Autoencoders**](https://yilmazdoga.github.io/image_denoising_using_autoencoders/)
+<br/>[10/2019 - 06/2020]<br/>
+This project aims to study and implement several deep neural network based denoising methods in order to understand their working principles and comparing the performance of autoencoder based deep models with the state-of-the-art methods.
+
+<br/>
+[**Image Classification with Bag of Features**](https://github.com/yilmazdoga/image_classification_with_bag_of_features)
+<br/>[4/2020 - 06/2020]<br/>
+This project aims to classify the given 4-class dataset using bag of features.
+
+<br/>
+[**Very Simple OS**](https://github.com/yilmazdoga/Very_Simple_OS "Very_Simple_OS Github")
+<br/>[06/2019]<br/>
+The aim of this project is to replicate early modern operating systems and develop a minimal OS which runs on the Very Simple CPU developed in Ozyegin University by Dr. H. Fatih Uğurdağ.
+
+## Experience
+
+<br/>
+**Software Developer Intern ---** [**Augmea Simulation and VR Technologies**](http://augmea.com "Augmea Inc.")
+<br/>[06/2019 - 07/2019]<br/>
+Worked on VR training simulator for oculus go using Unity.
+
+<br/>
+**Software Developer Intern ---** [**Preksis Information Technologies**](http://www.preksis.com/About.aspx "Preksis Information Technologies")
+<br/>[07/2018 - 08/2018]<br/>
+Developed microservices for an ongoing project.
