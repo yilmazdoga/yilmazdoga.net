@@ -22,7 +22,7 @@ Doğa Yılmaz is a senior computer science student at Ozyegin University. He is 
 <br/>[06/2020 - Present]<br/>
 Working on low-light image enhancement.<br/>
 <br/>[07/2019 - 09/2019]<br/>
-Worked on dataset generation using blender3D.<br/>
+Worked on dataset generation using Blender3D.<br/>
 <br/>
 
 ## Projects
