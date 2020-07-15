@@ -24,9 +24,9 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
 
 
 <div id="compare" class="beer-slider" data-beer-label="Denoised">
-  <img src="assets/images/pp.jpg"  alt="Denoised">
+  <img src="assets/images/DENOISED_2.png"  alt="Denoised">
   <div class="beer-reveal" data-beer-label="Noisy">
-    <img src="assets/images/pp.jpg"  alt="Noisy">
+    <img src="assets/images/NOISY_2.png"  alt="Noisy">
 </div>
 </div>
 
