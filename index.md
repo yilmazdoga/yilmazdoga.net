@@ -55,3 +55,4 @@ Worked on VR training simulator for oculus go using Unity.
 <br/>[07/2018 - 08/2018]<br/>
 Developed microservices for an ongoing project.<br/>
 <br/>
+
