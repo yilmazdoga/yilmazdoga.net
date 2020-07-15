@@ -22,11 +22,11 @@ To implement and train deep neural network models efficiently, a machine learnin
 
 Within the scope of this project, SIDD medium dataset has been divided as training and validation sets, data loaders for each set is implemented in order to use the data with PyTorch. After that, dataloaders have been optimized in order to avoid any bottlenecks while loading images every epoch. Following that, various deep autoencoder models are implemented using mainly 3 different techniques which will be explained in the neural network architectures section. At the table 1, a performance preview of the proposed models can be found.
 
-## Examples
+## Results
 
-Commit this
+### SIDD Examples
 
-<div class="container">
+<div class="beer-container">
   <header>
 
   </header>
@@ -38,7 +38,7 @@ Commit this
 </div>
 </div>
 
-<div class="container">
+<div class="beer-container">
   <header>
 
   </header>
@@ -50,7 +50,7 @@ Commit this
 </div>
 </div>
 
-<div class="container">
+<div class="beer-container">
   <header>
 
   </header>
