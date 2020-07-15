@@ -24,6 +24,8 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
 
 ## Examples
 
+Commit this
+
 <div style="margin: 0 auto">
 <div id="compare0" class="beer-slider" data-beer-label="Denoised">
   <img src="assets/images/DENOISED_0.png"  alt="Denoised">
