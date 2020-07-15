@@ -24,8 +24,6 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
 
 ## Results
 
-### SIDD Examples
-
 <div class="beer-container">
   <header>
 
