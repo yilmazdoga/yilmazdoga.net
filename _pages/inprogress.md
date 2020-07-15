@@ -26,31 +26,39 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
 
 Commit this
 
-<div style="margin: 0 auto">
-<div id="compare0" class="beer-slider" data-beer-label="Denoised">
-  <img src="assets/images/DENOISED_0.png"  alt="Denoised">
-  <div class="beer-reveal" data-beer-label="Noisy">
-    <img src="assets/images/NOISY_0.png"  alt="Noisy">
-</div>
+<div class="container">
+  <header>
+
+  </header>
+  <div id="compare0" class="beer-slider" data-beer-label="Denoised">
+    <img src="assets/DENOISED_0.png"  alt="Denoised">
+    <div class="beer-reveal" data-beer-label="Noisy">
+      <img src="assets/NOISY_0.png"  alt="Noisy">
+  </div>
 </div>
 </div>
 
-<div style="margin: 0 auto">
-<div id="compare1" class="beer-slider" data-beer-label="Denoised">
-  <img src="assets/images/DENOISED_1.png"  alt="Denoised">
-  <div class="beer-reveal" data-beer-label="Noisy">
-    <img src="assets/images/NOISY_1.png"  alt="Noisy">
-</div>
+<div class="container">
+  <header>
+
+  </header>
+  <div id="compare1" class="beer-slider" data-beer-label="Denoised">
+    <img src="assets/DENOISED_1.png"  alt="Denoised">
+    <div class="beer-reveal" data-beer-label="Noisy">
+      <img src="assets/NOISY_1.png"  alt="Noisy">
+  </div>
 </div>
 </div>
 
+<div class="container">
+  <header>
 
-<div style="margin: 0 auto">
-<div id="compare2" class="beer-slider" data-beer-label="Denoised">
-  <img src="assets/images/DENOISED_2.png"  alt="Denoised">
-  <div class="beer-reveal" data-beer-label="Noisy">
-    <img src="assets/images/NOISY_2.png"  alt="Noisy">
-</div>
+  </header>
+  <div id="compare2" class="beer-slider" data-beer-label="Denoised">
+    <img src="assets/DENOISED_2.png"  alt="Denoised">
+    <div class="beer-reveal" data-beer-label="Noisy">
+      <img src="assets/NOISY_2.png"  alt="Noisy">
+  </div>
 </div>
 </div>
 
