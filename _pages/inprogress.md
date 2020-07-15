@@ -23,13 +23,37 @@ To implement and train deep neural network models efficiently, a machine learnin
 Within the scope of this project, SIDD medium dataset has been divided as training and validation sets, data loaders for each set is implemented in order to use the data with PyTorch. After that, dataloaders have been optimized in order to avoid any bottlenecks while loading images every epoch. Following that, various deep autoencoder models are implemented using mainly 3 different techniques which will be explained in the neural network architectures section. At the table 1, a performance preview of the proposed models can be found.
 
 
-<div id="compare" class="beer-slider" data-beer-label="Denoised">
+
+<div style="margin: 0 auto">
+<div id="compare0" class="beer-slider" data-beer-label="Denoised">
+  <img src="assets/images/DENOISED_0.png"  alt="Denoised">
+  <div class="beer-reveal" data-beer-label="Noisy">
+    <img src="assets/images/NOISY_0.png"  alt="Noisy">
+</div>
+</div>
+</div>
+
+<div style="margin: 0 auto">
+<div id="compare1" class="beer-slider" data-beer-label="Denoised">
+  <img src="assets/images/DENOISED_1.png"  alt="Denoised">
+  <div class="beer-reveal" data-beer-label="Noisy">
+    <img src="assets/images/NOISY_1.png"  alt="Noisy">
+</div>
+</div>
+</div>
+
+
+<div style="margin: 0 auto">
+<div id="compare2" class="beer-slider" data-beer-label="Denoised">
   <img src="assets/images/DENOISED_2.png"  alt="Denoised">
   <div class="beer-reveal" data-beer-label="Noisy">
     <img src="assets/images/NOISY_2.png"  alt="Noisy">
 </div>
 </div>
+</div>
 
 <script>
-  new BeerSlider( document.getElementById( "compare" ) );
+  new BeerSlider( document.getElementById( "compare0" ) );
+  new BeerSlider( document.getElementById( "compare1" ) );
+  new BeerSlider( document.getElementById( "compare2" ) );
 </script>
