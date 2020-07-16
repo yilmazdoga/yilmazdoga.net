@@ -22,7 +22,7 @@ To implement and train deep neural network models efficiently, a machine learnin
 
 Within the scope of this project, SIDD medium dataset has been divided as training and validation sets, data loaders for each set is implemented in order to use the data with PyTorch. After that, dataloaders have been optimized in order to avoid any bottlenecks while loading images every epoch. Following that, various deep autoencoder models are implemented using mainly 3 different techniques which will be explained in the neural network architectures section. At the table 1, a performance preview of the proposed models can be found.
 
-## 
+##
 
 <div class="paper-info">
 
@@ -35,7 +35,7 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
   <ul>
     <li><b>Paper</b></li>
     <li>Doğa Yılmaz and M. Furkan Kıraç. "Image Denoising Using Autoencoders".</li>
-    <li><b>Paper: </b><a href="./assets/cs402_report.pdf" download="paper">PDF Link</a></li>
+    <li><b>Paper: </b><a href="./assets/cs402_report.pdf" download="DogaYilmaz_FurkanKirac_image_denoising_using_autoencoders">PDF Link</a></li>
     <li><b>Code: </b> <a href='https://github.com/yilmazdoga/image_denoising_using_autoencoders'>PyTorch Implementation</a></li>
   </ul>
 
