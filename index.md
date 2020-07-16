@@ -28,7 +28,7 @@ Worked on dataset generation using Blender3D.<br/>
 ## Projects
 
 <br/>
-[**Image Denoising Using Autoencoders**](https://yilmazdoga.com/image_denoising_using_autoencoders/)
+[**Image Denoising Using Autoencoders**](/image_denoising_using_autoencoders)
 <br/>[10/2019 - 06/2020]<br/>
 This project aims to study and implement several deep neural network based denoising methods in order to understand their working principles and comparing the performance of autoencoder based deep models with the state-of-the-art methods.
 
