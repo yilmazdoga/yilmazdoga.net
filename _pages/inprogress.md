@@ -35,7 +35,7 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
     <li><b>Paper</b></li>
     <li>Doğa Yılmaz and M. Furkan Kıraç.  "Image Denoising Using Autoencoders".</li>
     <li><b>PDF:</b> Link1</li>
-    <li><b>PDF:</b> Link1</li>
+    <li><b>PDF:</b> Link2</li>
   </ul>
 
   </div>
