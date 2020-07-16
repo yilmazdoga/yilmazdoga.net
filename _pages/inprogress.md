@@ -25,7 +25,7 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
 
 <div class="paper-info">
   <div class="paper-info paper-image">
-    <a href="./assets/cs402_report.pdf"><img alt="paper thumbnail" src="assets/images/cs402_report_image.png" width=190></a>
+    <img src="assets/images/cs402_report_image.png" width=190>
   </div>
 
   <div class="paper-info paper-data">
