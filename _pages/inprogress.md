@@ -24,20 +24,16 @@ Within the scope of this project, SIDD medium dataset has been divided as traini
 
 
 <div class="paper-info">
+
   <div class="paper-info paper-image">
     <img src="assets/images/cs402_report_image.png">
   </div>
 
   <div class="paper-info paper-data">
-    <b>Paper</b>
-    <p>Doğa Yılmaz and M. Furkan Kıraç.  "Image Denoising Using Autoencoders".
-    <br>
-
-    <br>
-    <b>PDF:</b> <a href="./assets/cs402_report.pdf" download="paper">Download Link</a>
-    </p>
-    <b>Code:</b> <a href='https://github.com/yilmazdoga/image_denoising_using_autoencoders'>PyTorch implementation</a></b>
-    <br>
+    <div><b>Paper</b></div>
+    <div>Doğa Yılmaz and M. Furkan Kıraç.  "Image Denoising Using Autoencoders".</div>
+    <div><b>PDF:</b> <a href="./assets/cs402_report.pdf" download="paper">Download Link</div>
+    <div><b>Code:</b> <a href='https://github.com/yilmazdoga/image_denoising_using_autoencoders'>PyTorch implementation</a></div>
   </div>
 
 </div>
