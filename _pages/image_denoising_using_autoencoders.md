@@ -70,8 +70,21 @@ In today’s world digital photography is a crucial part of our lives. Most of t
 </div>
 </div>
 
+<div class="beer-container">
+  <header>
+
+  </header>
+  <div id="compare3" class="beer-slider" data-beer-label="Denoised">
+    <img src="assets/images/AEv2_0_DENOISED_Big.png"  alt="Denoised">
+    <div class="beer-reveal" data-beer-label="Noisy">
+      <img src="assets/images/NOISY_Big.png"  alt="Noisy">
+  </div>
+</div>
+</div>
+
 <script>
   new BeerSlider( document.getElementById( "compare0" ) );
   new BeerSlider( document.getElementById( "compare1" ) );
   new BeerSlider( document.getElementById( "compare2" ) );
+  new BeerSlider( document.getElementById( "compare3" ) );
 </script>
