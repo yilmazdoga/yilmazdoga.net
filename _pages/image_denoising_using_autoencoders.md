@@ -21,9 +21,10 @@ In today’s world digital photography is a crucial part of our lives. Most of t
   <div class="paper-info paper-data">
 
   <ul>
-    <li><b>Paper</b></li>
-    <li>Doğa Yılmaz and M. Furkan Kıraç. "Image Denoising Using Autoencoders".</li>
-    <li><b>Paper: </b><a href="./assets/cs402_report.pdf" download="DogaYilmaz_FurkanKirac_image_denoising_using_autoencoders">PDF Link</a></li>
+    <li><b>Project Report</b></li>
+    <li>Doğa Yılmaz "Image Denoising Using Autoencoders".</li>
+    <li>Supervised by Assist. Prof. Dr. M. Furkan Kıraç.</li>
+    <li><b>Project Report: </b><a href="./assets/cs402_report.pdf" download="DogaYilmaz_FurkanKirac_image_denoising_using_autoencoders">PDF Link</a></li>
     <li><b>Code: </b> <a href='https://github.com/yilmazdoga/image_denoising_using_autoencoders'>PyTorch Implementation</a></li>
   </ul>
 
