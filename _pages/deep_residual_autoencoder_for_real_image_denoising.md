@@ -1,6 +1,6 @@
 ---
-title: "Image Denoising Using Autoencoders"
-permalink: /image_denoising_using_autoencoders
+title: "deep_residual_autoencoder_for_real_image_denoising"
+permalink: /deep_residual_autoencoder_for_real_image_denoising
 author_profile: false
 ---
 
@@ -25,7 +25,7 @@ In today’s world digital photography is a crucial part of our lives. Most of t
     <li>Doğa Yılmaz "Image Denoising Using Autoencoders".</li>
     <li>Supervised by Assist. Prof. Dr. M. Furkan Kıraç.</li>
     <li><b>Project Report: </b><a href="./assets/cs402_report.pdf" download="DogaYilmaz_FurkanKirac_image_denoising_using_autoencoders">PDF Link</a></li>
-    <li><b>Code: </b> <a href='https://github.com/yilmazdoga/image_denoising_using_autoencoders'>PyTorch Implementation</a></li>
+    <li><b>Code: </b> <a href='https://github.com/yilmazdoga/Deep_Residual_Autoencoder_for_Real_Image_Denoising'>PyTorch Implementation</a></li>
   </ul>
 
   </div>

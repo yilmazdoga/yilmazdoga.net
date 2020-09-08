@@ -6,7 +6,7 @@ title: ""
 
 ## About
 
-Doğa Yılmaz is a senior computer science student at Ozyegin University. He is currently working on low-light image enhancement.<br/>
+Doğa Yılmaz is a senior computer science student at Ozyegin University.<br/>
 <br/>
 
 ## Education
@@ -19,8 +19,8 @@ Doğa Yılmaz is a senior computer science student at Ozyegin University. He is 
 
 <br/>
 **Undergraduate Researcher ---** [**Ozyegin University Vision and Graphics Lab**](http://vvgl.ozyegin.edu.tr "Ozyegin University VGL")
-<br/>[06/2020 - Present]<br/>
-Working on low-light image enhancement.<br/>
+<br/>[06/2020 - 09/2020]<br/>
+Worked on Image Quality Assessment (IQA).<br/>
 <br/>[07/2019 - 09/2019]<br/>
 Worked on dataset generation using Blender3D.<br/>
 <br/>
@@ -28,7 +28,7 @@ Worked on dataset generation using Blender3D.<br/>
 ## Projects
 
 <br/>
-[**Image Denoising Using Autoencoders**](/image_denoising_using_autoencoders)
+[**Deep Residual Autoencoder for Real Image Denoising**](/deep_residual_autoencoder_for_real_image_denoising)
 <br/>[10/2019 - 06/2020]<br/>
 This project aims to study and implement several deep neural network based denoising methods in order to understand their working principles and comparing the performance of autoencoder based deep models with the state-of-the-art methods.
 
