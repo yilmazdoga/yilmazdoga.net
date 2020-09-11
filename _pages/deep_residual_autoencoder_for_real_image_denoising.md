@@ -45,7 +45,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
    <option value="compare5">Example 2: Ground-Truth vs Denoised</option>
    <option value="compare6">Example 3: Ground-Truth vs Noisy</option>
    <option value="compare7">Example 3: Denoised vs Noisy</option>
-   <option value="compare8">Example 3: Ground-Truth vs Noisy</option>
+   <option value="compare8">Example 3: Ground-Truth vs Denoised</option>
 </select>
 
 
