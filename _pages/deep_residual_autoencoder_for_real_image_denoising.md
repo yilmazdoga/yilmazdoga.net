@@ -60,7 +60,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare1" style = "display: none;" class="beer-container">
+<div id="compare1" class="beer-container">
   <header>
 
   </header>
@@ -72,7 +72,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare2" style = "display: none;" class="beer-container">
+<div id="compare2" class="beer-container">
   <header>
 
   </header>
@@ -84,7 +84,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare3" style = "display: none;" class="beer-container">
+<div id="compare3" class="beer-container">
   <header>
 
   </header>
@@ -96,7 +96,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare4" style = "display: none;" class="beer-container">
+<div id="compare4" class="beer-container">
   <header>
 
   </header>
@@ -108,7 +108,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare5" style = "display: none;" class="beer-container">
+<div id="compare5" class="beer-container">
   <header>
 
   </header>
@@ -120,7 +120,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare6" style = "display: none;" class="beer-container">
+<div id="compare6" class="beer-container">
   <header>
 
   </header>
@@ -132,7 +132,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare7" style = "display: none;" class="beer-container">
+<div id="compare7" class="beer-container">
   <header>
 
   </header>
@@ -144,7 +144,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 </div>
 </div>
 
-<div id="compare8" style = "display: none;" class="beer-container">
+<div id="compare8" class="beer-container">
   <header>
 
   </header>
@@ -167,4 +167,5 @@ Image denoising is one of the fundamental problems in low-level computer vision 
   new BeerSlider( document.getElementById( "slider6" ) );
   new BeerSlider( document.getElementById( "slider7" ) );
   new BeerSlider( document.getElementById( "slider8" ) );
+  selector();
 </script>
