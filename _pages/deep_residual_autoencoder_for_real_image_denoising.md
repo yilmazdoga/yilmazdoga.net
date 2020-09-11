@@ -21,10 +21,10 @@ Image denoising is one of the fundamental problems in low-level computer vision 
   <div class="paper-info paper-data">
 
   <ul>
-    <li><b>Project Report</b></li>
+    <li><b>Paper</b></li>
     <li>Doğa Yılmaz "Deep Residual Autoencoder for Real Image Denoising".</li>
     <li>Supervised by Assist. Prof. Dr. M. Furkan Kıraç.</li>
-    <li><b>Project Report: </b><a href="./assets/deep_residual_autoencoder_for_real_image_denoising.pdf">PDF Link</a></li>
+    <li><b>Paper: </b><a href="./assets/deep_residual_autoencoder_for_real_image_denoising.pdf">PDF Link</a></li>
     <li><b>Code: </b> <a href='https://github.com/yilmazdoga/Deep_Residual_Autoencoder_for_Real_Image_Denoising'>PyTorch Implementation</a></li>
   </ul>
 
