@@ -4,8 +4,8 @@ permalink: /deep_residual_autoencoder_for_real_image_denoising
 author_profile: false
 ---
 
-<script src="assets/js/plugins/BeerSlider.js"></script>
 <script src="assets/js/plugins/select.js"></script>
+<script src="assets/js/plugins/cocoen.js"></script>
 
 ## Abstract
 
@@ -37,135 +37,66 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 ## Results
 
 <select id="input" onchange="selector()" name="dropdown">
-   <option value="compare0">Example 1: Noisy vs Ground-Truth</option>
-   <option value="compare1">Example 1: Noisy vs Denoised</option>
-   <option value="compare2">Example 1: Denoised vs Ground-Truth</option>
-   <option value="compare3">Example 2: Noisy vs Ground-Truth</option>
-   <option value="compare4">Example 2: Noisy vs Denoised</option>
-   <option value="compare5">Example 2: Denoised vs Ground-Truth</option>
-   <option value="compare6">Example 3: Noisy vs Ground-Truth</option>
-   <option value="compare7">Example 3: Noisy vs Denoised</option>
-   <option value="compare8">Example 3: Denoised vs Ground-Truth</option>
+   <option value="compare0">Example 1: Ground-Truth vs Noisy</option>
+   <option value="compare1">Example 1: Denoised vs Noisy</option>
+   <option value="compare2">Example 1: Ground-Truth vs Denoised</option>
+   <option value="compare3">Example 2: Ground-Truth vs Noisy</option>
+   <option value="compare4">Example 2: Denoised vs Noisy</option>
+   <option value="compare5">Example 2: Ground-Truth vs Denoised</option>
+   <option value="compare6">Example 3: Ground-Truth vs Noisy</option>
+   <option value="compare7">Example 3: Denoised vs Noisy</option>
+   <option value="compare8">Example 3: Ground-Truth vs Noisy</option>
 </select>
 
-<div id="compare0" class="beer-container">
-  <header>
 
-  </header>
-  <div id="slider0" class="beer-slider" data-beer-label="Ground-Truth">
-    <img src="assets/images/DRA_Examples/GT_0.png"  alt="Ground-Truth">
-    <div class="beer-reveal" data-beer-label="Noisy">
-      <img src="assets/images/DRA_Examples/NOISY_0.png"  alt="Noisy">
-  </div>
-</div>
+<div id="compare0" class="cocoen">
+  <img src="assets/images/DRA_Examples/GT_0.png"  alt="Ground-Truth">
+  <img src="assets/images/DRA_Examples/NOISY_0.png"  alt="Noisy">
 </div>
 
-<div id="compare1" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider1" class="beer-slider" data-beer-label="Denoised">
-    <img src="assets/images/DRA_Examples/DENOISED_0.png"  alt="Denoised">
-    <div class="beer-reveal" data-beer-label="Noisy">
-      <img src="assets/images/DRA_Examples/NOISY_0.png"  alt="Noisy">
-  </div>
-</div>
+<div id="compare1" class="cocoen">
+  <img src="assets/images/DRA_Examples/DENOISED_0.png"  alt="Denoised">
+  <img src="assets/images/DRA_Examples/NOISY_0.png"  alt="Noisy">
 </div>
 
-<div id="compare2" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider2" class="beer-slider" data-beer-label="Ground-Truth">
-    <img src="assets/images/DRA_Examples/GT_0.png"  alt="Ground-Truth">
-    <div class="beer-reveal" data-beer-label="Denoised">
-      <img src="assets/images/DRA_Examples/DENOISED_0.png"  alt="Denoised">
-  </div>
-</div>
+<div id="compare2" class="cocoen">
+  <img src="assets/images/DRA_Examples/GT_0.png"  alt="Ground-Truth">
+  <img src="assets/images/DRA_Examples/DENOISED_0.png"  alt="Denoised">
 </div>
 
-<div id="compare3" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider3" class="beer-slider" data-beer-label="Ground-Truth">
-    <img src="assets/images/DRA_Examples/GT_1.png"  alt="Ground-Truth">
-    <div class="beer-reveal" data-beer-label="Noisy">
-      <img src="assets/images/DRA_Examples/NOISY_1.png"  alt="Noisy">
-  </div>
-</div>
+<div id="compare3" class="cocoen">
+  <img src="assets/images/DRA_Examples/GT_1.png"  alt="Ground-Truth">
+  <img src="assets/images/DRA_Examples/NOISY_1.png"  alt="Noisy">
 </div>
 
-<div id="compare4" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider4" class="beer-slider" data-beer-label="Denoised">
-    <img src="assets/images/DRA_Examples/DENOISED_1.png"  alt="Denoised">
-    <div class="beer-reveal" data-beer-label="Noisy">
-      <img src="assets/images/DRA_Examples/NOISY_1.png"  alt="Noisy">
-  </div>
-</div>
+<div id="compare4" class="cocoen">
+  <img src="assets/images/DRA_Examples/DENOISED_1.png"  alt="Denoised">
+  <img src="assets/images/DRA_Examples/NOISY_1.png"  alt="Noisy">
 </div>
 
-<div id="compare5" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider5" class="beer-slider" data-beer-label="Ground-Truth">
-    <img src="assets/images/DRA_Examples/GT_1.png"  alt="Ground-Truth">
-    <div class="beer-reveal" data-beer-label="Denoised">
-      <img src="assets/images/DRA_Examples/DENOISED_1.png"  alt="Denoised">
-  </div>
+<div id="compare5" class="cocoen">
+  <img src="assets/images/DRA_Examples/GT_1.png"  alt="Ground-Truth">
+  <img src="assets/images/DRA_Examples/DENOISED_1.png"  alt="Denoised">
 </div>
+<div id="compare6" class="cocoen">
+  <img src="assets/images/DRA_Examples/GT_2.png"  alt="Ground-Truth">
+  <img src="assets/images/DRA_Examples/NOISY_2.png"  alt="Noisy">
 </div>
 
-<div id="compare6" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider6" class="beer-slider" data-beer-label="Ground-Truth">
-    <img src="assets/images/DRA_Examples/GT_2.png"  alt="Ground-Truth">
-    <div class="beer-reveal" data-beer-label="Noisy">
-      <img src="assets/images/DRA_Examples/NOISY_2.png"  alt="Noisy">
-  </div>
-</div>
+<div id="compare7" class="cocoen">
+  <img src="assets/images/DRA_Examples/DENOISED_2.png"  alt="Denoised">
+  <img src="assets/images/DRA_Examples/NOISY_2.png"  alt="Noisy">
 </div>
 
-<div id="compare7" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider7" class="beer-slider" data-beer-label="Denoised">
-    <img src="assets/images/DRA_Examples/DENOISED_2.png"  alt="Denoised">
-    <div class="beer-reveal" data-beer-label="Noisy">
-      <img src="assets/images/DRA_Examples/NOISY_2.png"  alt="Noisy">
-  </div>
-</div>
-</div>
-
-<div id="compare8" class="beer-container">
-  <header>
-
-  </header>
-  <div id="slider8" class="beer-slider" data-beer-label="Ground-Truth">
-    <img src="assets/images/DRA_Examples/GT_2.png"  alt="Ground-Truth">
-    <div class="beer-reveal" data-beer-label="Denoised">
-      <img src="assets/images/DRA_Examples/DENOISED_2.png"  alt="Denoised">
-  </div>
-</div>
+<div id="compare8" class="cocoen">
+  <img src="assets/images/DRA_Examples/GT_2.png"  alt="Ground-Truth">
+  <img src="assets/images/DRA_Examples/DENOISED_2.png"  alt="Denoised">
 </div>
 
 
 <script>
-  new BeerSlider( document.getElementById( "slider0" ) );
-  new BeerSlider( document.getElementById( "slider1" ) );
-  new BeerSlider( document.getElementById( "slider2" ) );
-  new BeerSlider( document.getElementById( "slider3" ) );
-  new BeerSlider( document.getElementById( "slider4" ) );
-  new BeerSlider( document.getElementById( "slider5" ) );
-  new BeerSlider( document.getElementById( "slider6" ) );
-  new BeerSlider( document.getElementById( "slider7" ) );
-  new BeerSlider( document.getElementById( "slider8" ) );
-  selector();
+document.querySelectorAll('.cocoen').forEach(function(element){
+new Cocoen(element);
+});
+selector();
 </script>
