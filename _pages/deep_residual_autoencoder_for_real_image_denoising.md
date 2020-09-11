@@ -48,10 +48,11 @@ Image denoising is one of the fundamental problems in low-level computer vision 
    <option value="compare6">Example 3: Ground-Truth vs Noisy</option>
 </select>
 
-
+<div id="compare0" class=".cocoen-container">
 <div id="compare0" class="cocoen">
   <img src="assets/images/DRA_Examples/GT_0.png"  alt="Ground-Truth">
   <img src="assets/images/DRA_Examples/NOISY_0.png"  alt="Noisy">
+</div>
 </div>
 
 <div id="compare1" class="cocoen">

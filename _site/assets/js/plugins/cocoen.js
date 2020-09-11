@@ -110,5 +110,3 @@ Cocoen.defaults = {
   dragElementSelector: '.cocoen-drag',
   dragCallback: null,
 };
-
-module.exports = Cocoen;
