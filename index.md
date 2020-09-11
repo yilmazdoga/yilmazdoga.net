@@ -30,7 +30,7 @@ Worked on dataset generation using Blender3D.<br/>
 <br/>
 [**Deep Residual Autoencoder for Real Image Denoising**](/deep_residual_autoencoder_for_real_image_denoising)
 <br/>[10/2019 - 06/2020]<br/>
-This project aims to study and implement several deep neural network based denoising methods in order to understand their working principles and comparing the performance of autoencoder based deep models with the state-of-the-art methods.
+In this paper, we propose a deep convolutional autoencoder network combined with symmetric residual connections for real image denoising.
 
 <br/>
 [**Image Classification with Bag of Features**](https://github.com/yilmazdoga/image_classification_with_bag_of_features)
