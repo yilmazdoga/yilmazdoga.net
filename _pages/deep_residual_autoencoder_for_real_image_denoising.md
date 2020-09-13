@@ -16,7 +16,7 @@ Image denoising is one of the fundamental problems in low-level computer vision 
 <div class="paper-info">
 
   <div class="paper-info paper-image">
-    <img src="assets/images/cs402_report_image.png" href="./assets/cs402_report.pdf">
+    <img src="assets/images/DRA_paper_image.png" href="./assets/deep_residual_autoencoder_for_real_image_denoising.pdf">
   </div>
 
   <div class="paper-info paper-data">
