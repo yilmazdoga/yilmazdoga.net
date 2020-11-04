@@ -9,6 +9,7 @@ title: ""
 Undergraduate student with passion for computer vision and machine learning research. Seeks admission into Master’s program in computer vision and machine learning related fields.<br/>
 <br/>
 
+
 ## Education
 
 **BSc. Computer Science ---** [**Ozyegin University**](https://www.ozyegin.edu.tr/en/computer-science-department "Ozyegin University CS")
