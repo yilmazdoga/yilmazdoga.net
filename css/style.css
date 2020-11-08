@@ -220,11 +220,12 @@ a{
         padding-bottom: 0;
     }
     .section-2{
-        font-size: 1.0rem;
+        font-size: 0.9rem;
         padding: 0;
         padding-left: 2rem;
         padding-top: 1rem;
-        margin-left: 10px;
+        margin-left: 0px;
+        width: 80%;
     }
 
     .section-1 img{
