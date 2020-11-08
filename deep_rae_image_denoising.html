@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Deep Residual Autoencoder for Real Image Denoising</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/cocoen.min.css">
+    <style>
+			body {
+				font-family: sans-serif;
+				font-size: 16px;
+				margin: 2rem;
+				text-align: center;
+			}
+      .container {
+				position: relative;
+				margin: auto;
+				max-width: 700px;
+				text-align: center;
+			}
+    </style>
+	</head>
+	<body>
+		<div class="paper-showcase">
+		<h2>Deep Residual Autoencoder for Real Image Denoising</h2>
+		<h3>Abstract</h3>
+		<div class="paper-showcase abstract">
+		<p>Image denoising is one of the fundamental problems in low-level computer vision since it has found more and more real-world applications every day. Various approaches have been used for image denoising throughout the years such as block-matching and 3D filtering (BM3D). In the recent years learning-based approaches have outperformed the traditional methods such as BM3D. However, most of these learning-based methods makes the assumption that the real-world noise is fully modeled with various noise model such as additive white Gaussian noise (AWGN). These methods struggle to achieve outstanding performance when it comes to real-world noide. With the recent release of real-world noise datasets such as Smartphone Image Denoising Dataset (SIDD) and Darmstadt Noise Dataset (DND), the limitation caused by lack of real world noise data has eliminated. In this paper, we propose a deep convolutional autoencoder network combined with symmetric residual connections for real image denoising. We used the real-world images provided by SIDD for the training of the proposed model. Also, we have experimented with L1, L2, SSIM, MS-SSIM and sum of L1 and MS-SSIM loss functions in order to optimize the performance of our proposed model both qualitatively and quantitative. Our experimental results show that our proposed model outperforms the traditional methods and offers similar performance with state-of-the-art methods in blind real image denoising.
+		</p>
+		</div>
+		<div class="paper-showcase paper-info-grid">
+
+		<div class="paper-showcase paper-img">
+		<img src="assets/images/DRA_paper_image.jpg" alt="paper_image">
+		</div>
+		<div class="paper-showcase paper-info">
+		<h3>Paper</h3>
+		<p>Doğa Yılmaz "Deep Residual Autoencoder for Real Image Denoising"</p>
+		<p>Supervised by Assist. Prof. Dr. M. Furkan Kıraç.</p>
+		<a href="assets/deep_residual_autoencoder_for_real_image_denoising.pdf" class="cv-button">Paper PDF</a>
+		<a href="https://github.com/yilmazdoga/Deep_Residual_Autoencoder_for_Real_Image_Denoising" class="cv-button">PyTorch Implementation</a>
+		</div>
+		</div>
+		</div>
+		<div class="low-resolution-warning">
+			<p>Warning: Demo results are best seen on a big screen.</p>
+		</div>
+	  <div class="cocoen-container">
+			<h3 class="light">Demo Images</h3>
+			<select id="input" onchange="selector()" name="dropdown">
+	       <option value="compare1">Example 1: Denoised vs Noisy</option>
+	       <option value="compare2">Example 1: Ground-Truth vs Denoised</option>
+	       <option value="compare0">Example 1: Ground-Truth vs Noisy</option>
+	       <option value="compare4">Example 2: Denoised vs Noisy</option>
+	       <option value="compare5">Example 2: Ground-Truth vs Denoised</option>
+	       <option value="compare3">Example 2: Ground-Truth vs Noisy</option>
+	       <option value="compare7">Example 3: Denoised vs Noisy</option>
+	       <option value="compare8">Example 3: Ground-Truth vs Denoised</option>
+	       <option value="compare6">Example 3: Ground-Truth vs Noisy</option>
+	    </select>
+
+	    <div id="compare0" class=".cocoen-container">
+	    <div id="compare0" class="cocoen">
+	      <img src="assets/images/DRA_Examples/GT_0.png"  alt="Ground-Truth">
+	      <img src="assets/images/DRA_Examples/NOISY_0.png"  alt="Noisy">
+	    </div>
+	    </div>
+
+	    <div id="compare1" class="cocoen">
+	      <img src="assets/images/DRA_Examples/DENOISED_0.png"  alt="Denoised">
+	      <img src="assets/images/DRA_Examples/NOISY_0.png"  alt="Noisy">
+	    </div>
+
+	    <div id="compare2" class="cocoen">
+	      <img src="assets/images/DRA_Examples/GT_0.png"  alt="Ground-Truth">
+	      <img src="assets/images/DRA_Examples/DENOISED_0.png"  alt="Denoised">
+	    </div>
+
+	    <div id="compare3" class="cocoen">
+	      <img src="assets/images/DRA_Examples/GT_1.png"  alt="Ground-Truth">
+	      <img src="assets/images/DRA_Examples/NOISY_1.png"  alt="Noisy">
+	    </div>
+
+	    <div id="compare4" class="cocoen">
+	      <img src="assets/images/DRA_Examples/DENOISED_1.png"  alt="Denoised">
+	      <img src="assets/images/DRA_Examples/NOISY_1.png"  alt="Noisy">
+	    </div>
+
+	    <div id="compare5" class="cocoen">
+	      <img src="assets/images/DRA_Examples/GT_1.png"  alt="Ground-Truth">
+	      <img src="assets/images/DRA_Examples/DENOISED_1.png"  alt="Denoised">
+	    </div>
+	    <div id="compare6" class="cocoen">
+	      <img src="assets/images/DRA_Examples/GT_2.png"  alt="Ground-Truth">
+	      <img src="assets/images/DRA_Examples/NOISY_2.png"  alt="Noisy">
+	    </div>
+
+	    <div id="compare7" class="cocoen">
+	      <img src="assets/images/DRA_Examples/DENOISED_2.png"  alt="Denoised">
+	      <img src="assets/images/DRA_Examples/NOISY_2.png"  alt="Noisy">
+	    </div>
+
+	    <div id="compare8" class="cocoen">
+	      <img src="assets/images/DRA_Examples/GT_2.png"  alt="Ground-Truth">
+	      <img src="assets/images/DRA_Examples/DENOISED_2.png"  alt="Denoised">
+	    </div>
+	  </div>
+
+
+
+	  <script src="js/cocoen.min.js"></script>
+	  <script src="js/select.js"></script>
+	  <script>
+	  	document.querySelectorAll('.cocoen').forEach(function(element){
+	    new Cocoen(element);
+	    });
+	    selector();
+	  </script>
+	</body>
+</html>
