@@ -41,9 +41,8 @@ a{
 /* section 1 */
 .section-1{
     padding-top: 10vh;
-    padding-left: 10vh;
+    padding-left: 20vh;
     text-align: center;
-    float: right;
 }
 
 .section-1 p{
@@ -73,6 +72,8 @@ a{
 
 /* side-panel */
 .side-panel{
+  position: sticky;
+  top: 10vh;
   float: right;
 }
 
