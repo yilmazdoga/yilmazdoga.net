@@ -221,7 +221,7 @@ a{
 }
 
 /* media queres */
-@media(max-width:800px){
+@media(max-width:1080px){
     .grid-2{
         grid-template-columns: 1fr;
     }
