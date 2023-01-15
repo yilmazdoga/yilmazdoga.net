@@ -77,6 +77,11 @@ a {
   float: right;
 }
 
+/* twitter-feed */
+.twitter-feed {
+  padding-top: 2vh;
+}
+
 /* section 2 */
 .section-2 {
   padding-top: 10vh;
@@ -234,6 +239,10 @@ a {
 
   .side-panel {
     float: none;
+  }
+
+  .twitter-feed {
+    display: none;
   }
 
   .section-2 {
