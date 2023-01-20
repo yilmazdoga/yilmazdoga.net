@@ -79,6 +79,7 @@ a {
 
 /* twitter-feed */
 .twitter-feed {
+  display: none;
   padding-top: 2vh;
 }
 
