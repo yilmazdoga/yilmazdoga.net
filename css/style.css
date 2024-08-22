@@ -77,17 +77,11 @@ a {
   float: right;
 }
 
-/* twitter-feed */
-.twitter-feed {
-  display: none;
-  padding-top: 2vh;
-}
-
 /* section 2 */
 .section-2 {
   padding-top: 10vh;
   margin-left: 50px;
-  width: 75%;
+  width: 60%;
   font-size: 1.0rem;
   color: var(--light-text);
 }
@@ -98,8 +92,19 @@ a {
 }
 
 .cv-element {
-  padding-left: 30px;
-  padding-bottom: 5px;
+  padding-bottom: 10vh;
+  display: grid;
+  grid-gap: 4vh;
+  grid-template-columns: 25% 75%;
+}
+
+.cv-element img {
+  width: auto;
+  height: auto;
+  max-height: 6vh;
+  max-width: 100%;
+  display: block;
+  margin: auto;
 }
 
 .cv-element details {
@@ -240,10 +245,6 @@ a {
 
   .side-panel {
     float: none;
-  }
-
-  .twitter-feed {
-    display: none;
   }
 
   .section-2 {
