@@ -135,7 +135,6 @@ a {
 
 /* paper showcase items */
 .paper-showcase {
-  align: center;
   color: var(--light-text);
   width: auto;
   height: auto;
