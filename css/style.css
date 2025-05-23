@@ -4,7 +4,7 @@
 :root {
   --main-bg-color: #101214;
   --light-text: #FFFFFF;
-  --dark-text: #7A7C80;
+  --dark-text: rgb(255, 255, 255);
   --warning-color: #ffae42;
   --warning-text-color: #101214;
   --hover-color: #ffae42;
@@ -55,7 +55,7 @@ a {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 2%;
 }
 
 .section-1 h2 {
@@ -77,11 +77,20 @@ a {
   float: right;
 }
 
+.side-panel ul {
+  margin: 0 auto;
+  display: table;
+}
+
+.side-panel ul li {
+  text-align: left;
+}
+
 /* section 2 */
 .section-2 {
   padding-top: 10vh;
   margin-left: 50px;
-  width: 60%;
+  width: 70%;
   font-size: 1.0rem;
   color: var(--light-text);
 }
@@ -256,10 +265,10 @@ a {
   }
 
   .section-1 img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 2%;
   }
 
   .cv-button {
