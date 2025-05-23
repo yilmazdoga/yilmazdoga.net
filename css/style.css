@@ -1,5 +1,12 @@
-/* global */
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+  font-family: 'Linux Biolinum';
+  src: url('../assets/fonts/linux_biolinum/LinBiolinum_R.woff2') format('woff2'),
+       url('../assets/fonts/linux_biolinum/LinBiolinum_R.woff') format('woff'),
+       url('../assets/fonts/linux_biolinum/LinBiolinum_R.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --main-bg-color: #101214;
@@ -19,7 +26,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Linux Biolinum';
   background-color: var(--main-bg-color);
   color: var(--dark-text);
 }
