@@ -9,12 +9,11 @@
 }
 
 :root {
-  --main-bg-color: #101214;
-  --light-text: #FFFFFF;
-  --dark-text: rgb(255, 255, 255);
-  --warning-color: #ffae42;
-  --warning-text-color: #101214;
-  --hover-color: #ffae42;
+  --main-bg-color: rgb(0, 0, 0);
+  --main-txt-color: rgb(255, 255, 255);
+  --warning-color: rgb(255, 174, 66);
+  --warning-text-color: rgb(0, 0, 0);
+  --hover-color: rgb(255, 174, 66);
 }
 
 .grid-2 {
@@ -28,21 +27,12 @@ body {
   padding: 0;
   font-family: 'Linux Biolinum';
   background-color: var(--main-bg-color);
-  color: var(--dark-text);
+  color: var(--main-txt-color);
 }
 
 a {
   text-decoration: underline;
-  color: var(--light-text);
-}
-
-.light {
-  color: var(--light-text);
-}
-
-.dark {
-  color: var(--dark-text);
-  text-decoration: none;
+  color: var(--main-txt-color);
 }
 
 /* section 1 */
@@ -68,11 +58,11 @@ a {
 .section-1 h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
-  color: var(--light-text);
+  color: var(--main-txt-color);
 }
 
 .section-1 a {
-  color: var(--dark-text);
+  color: var(--main-txt-color);
   font-size: 1.2rem;
   padding: 10px;
 }
@@ -99,7 +89,7 @@ a {
   margin-left: 50px;
   width: 70%;
   font-size: 1.0rem;
-  color: var(--light-text);
+  color: var(--main-txt-color);
 }
 
 /* cv sections */
@@ -128,7 +118,7 @@ a {
 }
 
 .cv-date {
-  color: var(--dark-text);
+  color: var(--main-txt-color);
 }
 
 .cv-button {
@@ -140,8 +130,8 @@ a {
   margin: 4px 2px;
   cursor: pointer;
   background-color: var(--main-bg-color);
-  color: var(--light-text);
-  border: 2px solid var(--light-text);
+  color: var(--main-txt-color);
+  border: 2px solid var(--main-txt-color);
   border-radius: 8px;
 }
 
@@ -151,7 +141,7 @@ a {
 
 /* paper showcase items */
 .paper-showcase {
-  color: var(--light-text);
+  color: var(--main-txt-color);
   width: auto;
   height: auto;
   display: block;
@@ -214,8 +204,6 @@ a {
 .cocoen-container {
   max-width: 600px;
   max-height: 600px;
-  width: auto;
-  height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -235,7 +223,7 @@ a {
 }
 
 .section-1 a:hover {
-  color: var(--light-text);
+  color: var(--hover-color);
   cursor: pointer;
   transition: 0.6s;
 }
