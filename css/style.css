@@ -9,20 +9,20 @@
 }
 
 :root {
-  --main-bg-color: rgb(0, 0, 0);
-  --main-txt-color: rgb(255, 255, 255);
-  --warning-color: rgb(255, 140, 0);
-  --warning-text-color: rgb(255, 255, 255);
-  --hover-color: rgb(255, 200, 100);
+  --main-bg-color: rgb(10, 10, 10);
+  --main-txt-color: rgb(240, 240, 240);
+  --warning-color: rgb(255, 35, 35);
+  --warning-text-color: rgb(240, 240, 240);
+  --hover-color: linear-gradient(90deg, rgb(131, 58, 180), rgb(253, 29, 29), rgb(252, 176, 69));
   --font-size-body: 1.11rem;
   --font-size-heading: 1.4rem;
 }
 
 :root.light-theme {
-  --main-bg-color: rgb(255, 255, 255);
+  --main-bg-color: rgb(240, 240, 240);
   --main-txt-color: rgb(0, 0, 0);
-  --warning-color: rgb(255, 80, 80);
-  --warning-text-color: rgb(255, 255, 255);
+  --warning-color: rgb(255, 35, 35);
+  --warning-text-color: rgb(240, 240, 240);
   --hover-color: rgb(0, 102, 204);
 }
 
@@ -77,6 +77,12 @@ a {
   padding: 10px;
 }
 
+.section-1 a:hover {
+  background: var(--hover-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* side-panel */
 .side-panel {
   position: sticky;
@@ -102,6 +108,12 @@ a {
   width: 70%;
   font-size: var(--font-size-body);
   color: var(--main-txt-color);
+}
+
+.section-2 a:hover {
+  background: var(--hover-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* news sections */
@@ -212,6 +224,12 @@ a {
 
 .paper-showcase .paper-info {
   text-align: left;
+}
+
+.paper-showcase .paper-info a:hover {
+  background: var(--hover-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* project0 demo items */
