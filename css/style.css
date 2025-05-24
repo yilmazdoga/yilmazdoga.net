@@ -51,8 +51,8 @@ a {
 }
 
 .section-1 img {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 2%;
 }
@@ -77,12 +77,14 @@ a {
 }
 
 .side-panel ul {
+  padding-top: 20px;
   margin: 0 auto;
   display: table;
 }
 
 .side-panel ul li {
   text-align: left;
+  margin-bottom: 5px;
 }
 
 /* section 2 */
@@ -262,8 +264,8 @@ a {
   }
 
   .section-1 img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 2%;
   }
