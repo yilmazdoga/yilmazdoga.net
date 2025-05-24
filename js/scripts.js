@@ -1,22 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const paperDivs = document.querySelectorAll('.cv-element');
+    const container = document.querySelector('.grid-2'); // Assuming .cv-element elements are inside .grid-2
 
-    paperDivs.forEach(paperDiv => {
-        const image = paperDiv.querySelector('img');
-        const originalSrc = image.src; // Capture the original src
+    if (!container) return;
 
-        paperDiv.addEventListener('mouseover', () => {
-            const hoverSrc = image.getAttribute('data-hover');
-            if (hoverSrc) {
-                image.src = hoverSrc;
+    container.addEventListener('mouseover', (event) => {
+        const paperDiv = event.target.closest('.cv-element');
+        if (paperDiv) {
+            const image = paperDiv.querySelector('img');
+            if (image) {
+                const hoverSrc = image.getAttribute('data-hover');
+                if (hoverSrc) {
+                    image.dataset.originalSrc = image.src; // Store the original src in a dataset
+                    image.src = hoverSrc;
+                }
             }
-        });
+        }
+    });
 
-        paperDiv.addEventListener('mouseout', () => {
-            const hoverSrc = image.getAttribute('data-hover');
-            if (hoverSrc) {
-                image.src = originalSrc; // Revert to the original src
+    container.addEventListener('mouseout', (event) => {
+        const paperDiv = event.target.closest('.cv-element');
+        if (paperDiv) {
+            const image = paperDiv.querySelector('img');
+            if (image && image.dataset.originalSrc) {
+                image.src = image.dataset.originalSrc; // Restore the original src
             }
-        });
+        }
     });
 });
