@@ -11,11 +11,19 @@
 :root {
   --main-bg-color: rgb(0, 0, 0);
   --main-txt-color: rgb(255, 255, 255);
-  --warning-color: rgb(255, 174, 66);
-  --warning-text-color: rgb(0, 0, 0);
-  --hover-color: rgb(255, 174, 66);
-  --font-size-body: 1.1rem;
+  --warning-color: rgb(255, 140, 0);
+  --warning-text-color: rgb(255, 255, 255);
+  --hover-color: rgb(255, 200, 100);
+  --font-size-body: 1.11rem;
   --font-size-heading: 1.4rem;
+}
+
+:root.light-theme {
+  --main-bg-color: rgb(255, 255, 255);
+  --main-txt-color: rgb(0, 0, 0);
+  --warning-color: rgb(255, 80, 80);
+  --warning-text-color: rgb(255, 255, 255);
+  --hover-color: rgb(0, 102, 204);
 }
 
 .grid-2 {
@@ -222,20 +230,66 @@ a {
 /* animations / utilities */
 .section-2 a:hover {
   color: var(--hover-color);
-  cursor: pointer;
-  transition: 0.1s;
 }
 
 .section-1 a:hover {
   color: var(--hover-color);
-  cursor: pointer;
-  transition: 0.6s;
 }
 
 .paper-showcase .paper-info a:hover {
   color: var(--hover-color);
+}
+
+/* Switch */
+.switch {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.switch label {
+  position: relative;
+  display: inline-block;
+  width: 220px; /* Match the width of the image */
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: absolute;
   cursor: pointer;
-  transition: 0.1s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(calc(220px - 20px)); /* Adjust for the new width */
 }
 
 /* media queres */
