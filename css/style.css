@@ -14,6 +14,8 @@
   --warning-color: rgb(255, 174, 66);
   --warning-text-color: rgb(0, 0, 0);
   --hover-color: rgb(255, 174, 66);
+  --font-size-body: 1.1rem;
+  --font-size-heading: 1.4rem;
 }
 
 .grid-2 {
@@ -43,7 +45,7 @@ a {
 }
 
 .section-1 p {
-  font-size: 0.6rem;
+  font-size: var(--font-size-body);
   padding-bottom: 10px;
   margin: 0;
 }
@@ -56,14 +58,14 @@ a {
 }
 
 .section-1 h2 {
-  font-size: 1.4rem;
+  font-size: var(--font-size-heading);
   margin-bottom: 10px;
   color: var(--main-txt-color);
 }
 
 .section-1 a {
   color: var(--main-txt-color);
-  font-size: 1.2rem;
+  font-size: var(--font-size-body);
   padding: 10px;
 }
 
@@ -88,7 +90,7 @@ a {
   padding-top: 10vh;
   margin-left: 50px;
   width: 70%;
-  font-size: 1.0rem;
+  font-size: var(--font-size-body);
   color: var(--main-txt-color);
 }
 
@@ -126,7 +128,7 @@ a {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: var(--font-size-body);
   margin: 4px 2px;
   cursor: pointer;
   background-color: var(--main-bg-color);
@@ -251,7 +253,7 @@ a {
   }
 
   .section-2 {
-    font-size: 0.9rem;
+    font-size: var(--font-size-body);
     padding: 0;
     padding-left: 2rem;
     padding-top: 1rem;
@@ -267,7 +269,7 @@ a {
   }
 
   .cv-button {
-    font-size: 12px;
+    font-size: var(--font-size-body);
   }
 
   .paper-showcase {
@@ -295,7 +297,7 @@ a {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .low-resolution-warning {
     display: block;
   }
