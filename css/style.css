@@ -18,14 +18,6 @@
   --font-size-heading: 1.4rem;
 }
 
-:root.light-theme {
-  --main-bg-color: rgb(240, 240, 240);
-  --main-txt-color: rgb(0, 0, 0);
-  --warning-color: rgb(255, 35, 35);
-  --warning-text-color: rgb(240, 240, 240);
-  --hover-color: rgb(0, 102, 204);
-}
-
 .grid-2 {
   display: grid;
   grid-gap: 5vh;
