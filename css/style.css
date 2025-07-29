@@ -1,8 +1,6 @@
 @font-face {
   font-family: 'Linux Biolinum';
-  src: url('../assets/fonts/linux_biolinum/LinBiolinum_R.woff2') format('woff2'),
-       url('../assets/fonts/linux_biolinum/LinBiolinum_R.woff') format('woff'),
-       url('../assets/fonts/linux_biolinum/LinBiolinum_R.ttf') format('truetype');
+  src: url('../assets/fonts/linux_biolinum/LinBiolinum_R.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
