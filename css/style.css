@@ -35,7 +35,6 @@ body {
   font-family: 'Linux Biolinum';
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
-  width: var(--main-percent-width);
 }
 
 /* top navigation */
@@ -164,6 +163,7 @@ a {
   padding-top: 0;
   font-size: var(--font-size-body);
   color: var(--main-txt-color);
+  width: var(--main-percent-width);
 }
 
 .section-2 a:hover {
