@@ -17,7 +17,7 @@
   --nav-height: 56px;
   --sidebar-width: 280px;
   --main-width: clamp(600px, 52vw, 960px);
-  --main-percent-width: 75%;
+  --main-percent-width: 70%;
 }
 
 .grid-2 {
