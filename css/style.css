@@ -18,7 +18,7 @@
   --sidebar-width: 280px;
   --main-width: clamp(600px, 52vw, 960px);
   --main-percent-width: 80%;
-  --component-width: 95%;
+  --component-width: 90%;
 }
 
 .grid-2 {
