@@ -201,6 +201,10 @@ a {
   padding-bottom: 10px;
 }
 
+.cv-section li {
+  margin-bottom: 1rem;
+}
+
 .cv-element {
   padding-bottom: 6vh;
   display: grid;
