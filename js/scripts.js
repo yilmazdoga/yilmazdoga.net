@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container) return;
 
     container.addEventListener('mouseover', (event) => {
-        const paperDiv = event.target.closest('.cv-element');
+        const paperDiv = event.target.closest('.cv-element, .paper-container');
         if (paperDiv) {
             const image = paperDiv.querySelector('img');
             if (image) {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     container.addEventListener('mouseout', (event) => {
-        const paperDiv = event.target.closest('.cv-element');
+        const paperDiv = event.target.closest('.cv-element, .paper-container');
         if (paperDiv) {
             const image = paperDiv.querySelector('img');
             if (image && image.dataset.originalSrc) {
