@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.grid-2'); // Assuming .cv-element elements are inside .grid-2
+    const newsScroll = document.querySelector('.news-scroll');
+    const newsWrapper = document.querySelector('.news-scroll-wrapper');
+    if (newsScroll && newsWrapper) {
+        const checkBottom = () => {
+            const atBottom = newsScroll.scrollHeight - newsScroll.scrollTop <= newsScroll.clientHeight + 2;
+            newsWrapper.classList.toggle('at-bottom', atBottom);
+        };
+        newsScroll.addEventListener('scroll', checkBottom);
+        checkBottom();
+    }
+
+    const container = document.querySelector('.grid-2');
 
     if (!container) return;
 
