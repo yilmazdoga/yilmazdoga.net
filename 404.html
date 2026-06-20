@@ -7,14 +7,37 @@
   <title>404 — Page not found · yilmazdoga.net</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0a0a0a">
+  <script>(function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
   <style>
+    /* site font, pulled via absolute path so it resolves from any 404 URL; falls back to the same serif stack the main site declares */
+    @font-face {
+      font-family: 'Linux Biolinum';
+      src: url('/assets/fonts/linux_biolinum/LinBiolinum_R.woff2') format('woff2'),
+           url('/assets/fonts/linux_biolinum/LinBiolinum_R.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
-      --bg: rgb(10, 10, 10);
-      --txt: rgb(240, 240, 240);
-      --grad: linear-gradient(90deg, rgb(131, 58, 180), rgb(253, 29, 29), rgb(252, 176, 69), rgb(131, 58, 180));
+      --main-bg-color: rgb(10, 10, 10);
+      --main-txt-color: rgb(240, 240, 240);
+      --hover-color: linear-gradient(90deg, rgb(131, 58, 180), rgb(253, 29, 29), rgb(252, 176, 69));
+      --nav-bg: rgba(10, 10, 10, 0.7);
+      --nav-border: rgba(255, 255, 255, 0.08);
+      --nav-underline: rgba(255, 255, 255, 0.35);
       --nav-height: 56px;
+      --scan: rgba(255, 255, 255, 0.03);
       --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    :root[data-theme="light"] {
+      --main-bg-color: rgb(247, 247, 248);
+      --main-txt-color: rgb(22, 22, 24);
+      --nav-bg: rgba(247, 247, 248, 0.7);
+      --nav-border: rgba(0, 0, 0, 0.10);
+      --nav-underline: rgba(0, 0, 0, 0.35);
+      --scan: rgba(0, 0, 0, 0.03);
     }
 
     * { box-sizing: border-box; }
@@ -22,15 +45,16 @@
     html, body { margin: 0; padding: 0; min-height: 100%; }
 
     body {
-      background: var(--bg);
-      color: var(--txt);
-      font-family: var(--serif);
+      background-color: var(--main-bg-color);
+      color: var(--main-txt-color);
+      font-family: 'Linux Biolinum', Georgia, 'Times New Roman', serif;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       min-height: 100dvh;
       overflow-x: hidden;
       -webkit-text-size-adjust: 100%;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     /* faint scanlines for a retro-terminal vibe */
@@ -39,41 +63,96 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 3px);
-      z-index: 5;
+      background: repeating-linear-gradient(to bottom, var(--scan) 0, var(--scan) 1px, transparent 1px, transparent 3px);
+      z-index: 6;
       opacity: 0.5;
     }
 
-    /* top navigation — mirrors the main site */
+    /* ---- top navigation: identical to the main site ---- */
     .top-nav {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--nav-border);
+      font-size: 1.2rem;
       height: var(--nav-height);
+      box-sizing: border-box;
+    }
+
+    .top-nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 20px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      background: rgba(10, 10, 10, 0.7);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 1.2rem;
     }
 
-    .top-nav a { color: var(--txt); text-decoration: none; }
-    .nav-brand { font-weight: 600; letter-spacing: 0.2px; }
-    .nav-links a { margin-left: 18px; opacity: 0.9; }
+    .top-nav a {
+      text-decoration: none;
+      color: var(--main-txt-color);
+    }
 
-    .top-nav a:hover {
-      background: var(--grad);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
+    .top-nav .nav-brand {
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .top-nav .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .top-nav .nav-links a {
+      opacity: 0.9;
+      padding: 8px 2px;
+    }
+
+    .top-nav .nav-links a:hover,
+    .top-nav .nav-brand:hover {
+      background: var(--hover-color);
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      color: transparent;
     }
 
+    /* theme toggle */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 8px;
+      color: var(--main-txt-color);
+      cursor: pointer;
+      line-height: 0;
+      border-radius: 6px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .theme-toggle svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .theme-toggle:hover { color: rgb(252, 176, 69); }
+    .theme-toggle .icon-moon { display: none; }
+    :root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+    :root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+    /* ---- 404 content ---- */
     main {
       flex: 1;
       display: flex;
@@ -86,7 +165,7 @@
     }
 
     .gradient {
-      background: var(--grad);
+      background: linear-gradient(90deg, rgb(131, 58, 180), rgb(253, 29, 29), rgb(252, 176, 69), rgb(131, 58, 180));
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -143,9 +222,12 @@
       opacity: 0.4;
     }
 
+    @media (max-width: 680px) {
+      .top-nav { font-size: 1.05rem; }
+      .top-nav .nav-inner { padding: 0 14px; }
+    }
+
     @media (max-width: 600px) {
-      .top-nav { font-size: 1.05rem; padding: 0 14px; }
-      .nav-links a { margin-left: 14px; }
       .art { min-height: 14em; margin-top: 0.4rem; }
       .hint .desktop-only { display: none; }
     }
@@ -157,12 +239,18 @@
 </head>
 
 <body>
-  <header class="top-nav" aria-label="Primary">
-    <a class="nav-brand" href="https://yilmazdoga.net">yilmazdoga.net</a>
-    <nav class="nav-links">
-      <a href="https://yilmazdoga.net/index.html">Home</a>
-      <a href="https://yilmazdoga.net/cv.html">CV</a>
-    </nav>
+  <header class="top-nav" role="navigation" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="https://yilmazdoga.net">yilmazdoga.net</a>
+      <nav class="nav-links">
+        <a href="https://yilmazdoga.net/index.html">Home</a>
+        <a href="https://yilmazdoga.net/cv.html">CV</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -175,9 +263,32 @@
   <script>
     (function () {
       "use strict";
+
+      // ---- theme toggle (mirrors the main site) -----------------------------
+      var root = document.documentElement;
+      var toggle = document.getElementById("theme-toggle");
+      var tcMeta = document.querySelector('meta[name="theme-color"]');
+
+      function applyTheme(theme, persist) {
+        if (theme === "light") root.setAttribute("data-theme", "light");
+        else root.removeAttribute("data-theme");
+        if (toggle) toggle.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+        if (tcMeta) tcMeta.setAttribute("content", theme === "light" ? "#f7f7f8" : "#0a0a0a");
+        if (persist) { try { localStorage.setItem("theme", theme); } catch (e) { /* ignore */ } }
+      }
+
+      var theme = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+      applyTheme(theme, false);
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          theme = theme === "light" ? "dark" : "light";
+          applyTheme(theme, true);
+        });
+      }
+
+      // ---- ascii animation --------------------------------------------------
       var W = 58, H = 15;
 
-      // ---- helpers ----------------------------------------------------------
       function rnd(n) { return Math.floor(Math.random() * n); }
       function pick(a) { return a[rnd(a.length)]; }
 
@@ -244,7 +355,6 @@
         return { name: name, speed: speed, setup: function () {}, frame: function (t) { return F[t % F.length]; } };
       }
 
-      // ---- sprites ----------------------------------------------------------
       var ASTRO = sprite(String.raw`
    ___
   /. .\
@@ -255,7 +365,6 @@
   J   L
 `);
 
-      // ---- scenes -----------------------------------------------------------
       var astronaut = {
         name: "lost-astronaut", speed: 90,
         setup: function () { this.f = blankField(0.05); this.x = 6 + rnd(W - 24); },
@@ -286,7 +395,7 @@
         },
         frame: function (t) {
           var g = grid(" "), c, k;
-          for (c = 0; c < W; c++) g[0][c] = Math.sin((c + t) / 2.2) > 0 ? "~" : "-"; // water surface
+          for (c = 0; c < W; c++) g[0][c] = Math.sin((c + t) / 2.2) > 0 ? "~" : "-";
           this.bub.forEach(function (o) {
             if (t % 2 === 0) { o.y -= 1; if (o.y < 1) { o.y = H - 1; o.x = rnd(W); } }
             if (o.y > 0 && o.y < H && o.x >= 0 && o.x < W) g[o.y][o.x] = "°";
@@ -338,7 +447,7 @@
         frame: function (t) {
           var lines = ["", "", " 4 0 4 ", "", "P A G E   N O T   F O U N D", "", ""];
           var cs = "!<>-_\\/[]{}=+*#01?%&@$";
-          var prog = (t % 44) / 28; // scramble -> resolve -> reset
+          var prog = (t % 44) / 28;
           return lines.map(function (line) {
             return line.split("").map(function (chr) {
               if (chr === " ") return " ";
@@ -431,7 +540,6 @@
         "The pixels you are looking for are in another castle."
       ];
 
-      // ---- run --------------------------------------------------------------
       var el = document.getElementById("art");
       var subEl = document.getElementById("sub");
       var nameEl = document.getElementById("scene-name");
@@ -450,13 +558,14 @@
 
       shuffle();
 
-      // reshuffle on interaction (but let real links work)
+      // reshuffle on interaction, but leave links and the nav controls alone
       document.addEventListener("click", function (e) {
-        if (e.target.closest("a")) return;
+        if (e.target.closest("a, button")) return;
         shuffle();
       });
       document.addEventListener("keydown", function (e) {
         if (e.key === "Tab" || e.altKey || e.metaKey || e.ctrlKey) return;
+        if (e.target && e.target.closest && e.target.closest("a, button")) return;
         shuffle();
       });
 

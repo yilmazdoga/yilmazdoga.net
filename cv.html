@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0a0a0a">
+  <script>(function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
   <title>Doğa Yılmaz — Curriculum Vitae</title>
   <meta name="description" content="Curriculum Vitae of Doğa Yılmaz: education, research and industry experience, and awards. PhD student in computer graphics and neural rendering at UCL.">
   <meta name="author" content="Doğa Yılmaz">
@@ -35,6 +36,10 @@
       <nav class="nav-links">
         <a href="https://yilmazdoga.net/index.html">Home</a>
         <a href="https://yilmazdoga.net/cv.html" aria-current="page">CV</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -73,7 +78,7 @@
         <h2>Education</h2>
 
         <div class="cv-element">
-          <img class="vertical-logo" src="assets/images/logos/ucl_light.webp" alt="UCL logo" width="640" height="778" loading="lazy" decoding="async">
+          <img class="vertical-logo" src="assets/images/logos/ucl_light.webp" data-light="assets/images/logos/ucl_dark.webp" alt="UCL logo" width="640" height="778" loading="lazy" decoding="async">
           <div>
             <b>PhD in Computer Science</b><br>
             <a href='https://www.ucl.ac.uk'>University College London</a><br>
@@ -84,7 +89,7 @@
         </div>
 
         <div class="cv-element">
-          <img src="assets/images/logos/ozu_logo_white.webp" alt="Özyeğin University logo" width="900" height="267" loading="lazy" decoding="async">
+          <img src="assets/images/logos/ozu_logo_white.webp" data-light="assets/images/logos/ozu_logo_dark.webp" alt="Özyeğin University logo" width="900" height="267" loading="lazy" decoding="async">
           <div>
             <b>MSc in Artificial Intelligence</b><br>
             <a href='https://www.ozyegin.edu.tr/en/'>Özyeğin University</a><br>
@@ -99,7 +104,7 @@
         </div>
 
         <div class="cv-element">
-          <img src="assets/images/logos/ozu_logo_white.webp" alt="Özyeğin University logo" width="900" height="267" loading="lazy" decoding="async">
+          <img src="assets/images/logos/ozu_logo_white.webp" data-light="assets/images/logos/ozu_logo_dark.webp" alt="Özyeğin University logo" width="900" height="267" loading="lazy" decoding="async">
           <div>
             <b>BSc in Computer Science</b><br>
             <a href='https://www.ozyegin.edu.tr/en/'>Özyeğin University</a><br>
@@ -116,7 +121,7 @@
         <h2>Industry Experience</h2>
 
         <div class="cv-element">
-          <img src="assets/images/logos/fishency_white.webp" alt="Fishency Innovation logo" width="326" height="132" loading="lazy" decoding="async">
+          <img src="assets/images/logos/fishency_white.webp" data-light="assets/images/logos/fishency_dark.webp" alt="Fishency Innovation logo" width="326" height="132" loading="lazy" decoding="async">
           <div>
             <b>Computer Vision Research Engineer</b><br>
             <a href='https://www.fishency.no'>Fishency Innovation</a><br>
@@ -132,7 +137,7 @@
       <h2>Academic Experience</h2>
 
         <div class="cv-element">
-          <img class="vertical-logo" src="assets/images/logos/ucl_light.webp" alt="UCL logo" width="640" height="778" loading="lazy" decoding="async">
+          <img class="vertical-logo" src="assets/images/logos/ucl_light.webp" data-light="assets/images/logos/ucl_dark.webp" alt="UCL logo" width="640" height="778" loading="lazy" decoding="async">
           <div>
             <b>Postgraduate Teaching Assistant</b><br>
             <a href='https://www.ucl.ac.uk/computer-science/'>University College London</a><br>
@@ -142,7 +147,7 @@
         </div>
 
         <div class="cv-element">
-          <img class="vertical-logo" src="assets/images/logos/ucl_light.webp" alt="UCL logo" width="640" height="778" loading="lazy" decoding="async">
+          <img class="vertical-logo" src="assets/images/logos/ucl_light.webp" data-light="assets/images/logos/ucl_dark.webp" alt="UCL logo" width="640" height="778" loading="lazy" decoding="async">
           <div>
             <b>Research Intern</b><br>
             <a href='https://www.ucl.ac.uk/computer-science/'>University College London</a><br>
@@ -152,7 +157,7 @@
         </div>
 
         <div class="cv-element">
-          <img src="assets/images/logos/ozu_logo_white.webp" alt="Özyeğin University logo" width="900" height="267" loading="lazy" decoding="async">
+          <img src="assets/images/logos/ozu_logo_white.webp" data-light="assets/images/logos/ozu_logo_dark.webp" alt="Özyeğin University logo" width="900" height="267" loading="lazy" decoding="async">
           <div>
             <b>Research & Teaching Assistant</b><br>
             <a href='https://www.ozyegin.edu.tr/en/'>Özyeğin University</a><br>
