@@ -79,6 +79,7 @@ body {
 
 .top-nav .nav-links a {
   opacity: 0.9;
+  padding: 8px 2px; /* larger tap target on touch devices */
 }
 
 .top-nav .nav-links a[aria-current="page"] {
@@ -392,6 +393,25 @@ a {
 
   .section-2 {
     padding-left: 0;
+  }
+
+  .top-nav {
+    font-size: 1.05rem;
+  }
+
+  .top-nav .nav-inner {
+    padding: 0 14px;
+  }
+
+  /* let News flow with the page instead of trapping a tiny inner scroll */
+  .news-scroll {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+
+  .news-scroll-wrapper::after {
+    display: none;
   }
 }
 

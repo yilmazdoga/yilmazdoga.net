@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page not found · yilmazdoga.net</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a0a0a">
+  <style>
+    :root {
+      --bg: rgb(10, 10, 10);
+      --txt: rgb(240, 240, 240);
+      --grad: linear-gradient(90deg, rgb(131, 58, 180), rgb(253, 29, 29), rgb(252, 176, 69), rgb(131, 58, 180));
+      --nav-height: 56px;
+      --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: var(--serif);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* faint scanlines for a retro-terminal vibe */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 3px);
+      z-index: 5;
+      opacity: 0.5;
+    }
+
+    /* top navigation — mirrors the main site */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      background: rgba(10, 10, 10, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 1.2rem;
+    }
+
+    .top-nav a { color: var(--txt); text-decoration: none; }
+    .nav-brand { font-weight: 600; letter-spacing: 0.2px; }
+    .nav-links a { margin-left: 18px; opacity: 0.9; }
+
+    .top-nav a:hover {
+      background: var(--grad);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem 1rem 3rem;
+      width: 100%;
+    }
+
+    .gradient {
+      background: var(--grad);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation: flow 6s linear infinite;
+    }
+
+    @keyframes flow { to { background-position: 200% center; } }
+
+    .code {
+      font-family: var(--mono);
+      font-weight: 800;
+      font-size: clamp(3.2rem, 22vw, 8rem);
+      line-height: 0.9;
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .art {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.8rem 0 0.4rem;
+      min-height: 16em;
+      filter: drop-shadow(0 0 6px rgba(253, 29, 29, 0.30));
+      overflow: hidden;
+    }
+
+    .art pre {
+      margin: 0;
+      font-family: var(--mono);
+      white-space: pre;
+      text-align: left;
+      display: inline-block;
+      font-size: clamp(0.42rem, 2.6vw, 0.95rem);
+      line-height: 1.12;
+    }
+
+    .sub {
+      font-size: clamp(1rem, 4.5vw, 1.3rem);
+      opacity: 0.85;
+      min-height: 2.6em;
+      max-width: 32ch;
+      margin: 0.3rem auto 0;
+    }
+
+    .hint {
+      margin-top: 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      opacity: 0.4;
+    }
+
+    @media (max-width: 600px) {
+      .top-nav { font-size: 1.05rem; padding: 0 14px; }
+      .nav-links a { margin-left: 14px; }
+      .art { min-height: 14em; margin-top: 0.4rem; }
+      .hint .desktop-only { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gradient { animation: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-nav" aria-label="Primary">
+    <a class="nav-brand" href="https://yilmazdoga.net">yilmazdoga.net</a>
+    <nav class="nav-links">
+      <a href="https://yilmazdoga.net/index.html">Home</a>
+      <a href="https://yilmazdoga.net/cv.html">CV</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="code gradient" aria-label="404">404</h1>
+    <div class="art" aria-hidden="true"><pre id="art" class="gradient"></pre></div>
+    <p class="sub" id="sub" role="status"></p>
+    <p class="hint"><span class="desktop-only">click or press any key to shuffle · </span><span id="scene-name"></span></p>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+      var W = 58, H = 15;
+
+      // ---- helpers ----------------------------------------------------------
+      function rnd(n) { return Math.floor(Math.random() * n); }
+      function pick(a) { return a[rnd(a.length)]; }
+
+      // trim leading/trailing blank line, pad every line to equal width
+      function sprite(raw) {
+        var a = raw.replace(/^\n/, "").replace(/\n$/, "").split("\n");
+        var w = Math.max.apply(null, a.map(function (l) { return l.length; }));
+        return a.map(function (l) { return l + " ".repeat(w - l.length); });
+      }
+
+      // normalise a set of frames so all are the same width AND height
+      function padFrames(frames) {
+        var split = frames.map(function (f) {
+          return f.replace(/^\n/, "").replace(/\n$/, "").split("\n");
+        });
+        var w = 0, h = 0, i, j;
+        for (i = 0; i < split.length; i++) {
+          h = Math.max(h, split[i].length);
+          for (j = 0; j < split[i].length; j++) w = Math.max(w, split[i][j].length);
+        }
+        return split.map(function (rows) {
+          var r = rows.map(function (l) { return l + " ".repeat(w - l.length); });
+          while (r.length < h) r.push(" ".repeat(w));
+          return r.join("\n");
+        });
+      }
+
+      function blankField(density) {
+        var f = [], r, c, row;
+        for (r = 0; r < H; r++) {
+          row = [];
+          for (c = 0; c < W; c++) {
+            row.push(Math.random() < density ? (Math.random() < 0.5 ? "." : "*") : " ");
+          }
+          f.push(row);
+        }
+        return f;
+      }
+
+      // draw an OPAQUE sprite (its spaces clear the field) onto a field clone
+      function draw(field, spr, sx, sy) {
+        var g = field.map(function (row) { return row.slice(); });
+        for (var i = 0; i < spr.length; i++) {
+          var ry = sy + i;
+          if (ry < 0 || ry >= H) continue;
+          for (var c = 0; c < spr[i].length; c++) {
+            var cx = sx + c;
+            if (cx < 0 || cx >= W) continue;
+            g[ry][cx] = spr[i][c];
+          }
+        }
+        return g.map(function (row) { return row.join(""); }).join("\n");
+      }
+
+      function grid(fill) {
+        var g = [], r;
+        for (r = 0; r < H; r++) g.push(new Array(W).fill(fill || " "));
+        return g;
+      }
+      function flat(g) { return g.map(function (r) { return r.join(""); }).join("\n"); }
+
+      function frameScene(name, speed, frames) {
+        var F = padFrames(frames);
+        return { name: name, speed: speed, setup: function () {}, frame: function (t) { return F[t % F.length]; } };
+      }
+
+      // ---- sprites ----------------------------------------------------------
+      var ASTRO = sprite(String.raw`
+   ___
+  /. .\
+  |   |
+  \ ~ /
+ /|   |\
+  |   |
+  J   L
+`);
+
+      // ---- scenes -----------------------------------------------------------
+      var astronaut = {
+        name: "lost-astronaut", speed: 90,
+        setup: function () { this.f = blankField(0.05); this.x = 6 + rnd(W - 24); },
+        frame: function (t) {
+          if (t % 2 === 0) {
+            var r = rnd(H), c = rnd(W);
+            this.f[r][c] = this.f[r][c] === " " ? (Math.random() < 0.5 ? "." : "*") : " ";
+          }
+          this.x += 0.6;
+          if (this.x > W) this.x = -ASTRO[0].length;
+          var y = Math.round(H / 2 - ASTRO.length / 2 + Math.sin(t / 7) * 1.6);
+          return draw(this.f, ASTRO, Math.round(this.x), y);
+        }
+      };
+
+      var fish = {
+        name: "gone-fishing", speed: 110,
+        setup: function () {
+          this.school = [];
+          for (var i = 0; i < 5; i++) {
+            this.school.push({
+              x: Math.random() * W, y: 2 + rnd(H - 3),
+              dir: Math.random() < 0.5 ? 1 : -1, sp: 0.4 + Math.random() * 0.9
+            });
+          }
+          this.bub = [];
+          for (var b = 0; b < 12; b++) this.bub.push({ x: rnd(W), y: rnd(H) });
+        },
+        frame: function (t) {
+          var g = grid(" "), c, k;
+          for (c = 0; c < W; c++) g[0][c] = Math.sin((c + t) / 2.2) > 0 ? "~" : "-"; // water surface
+          this.bub.forEach(function (o) {
+            if (t % 2 === 0) { o.y -= 1; if (o.y < 1) { o.y = H - 1; o.x = rnd(W); } }
+            if (o.y > 0 && o.y < H && o.x >= 0 && o.x < W) g[o.y][o.x] = "°";
+          });
+          this.school.forEach(function (f) {
+            f.x += f.dir * f.sp;
+            var gl = f.dir > 0 ? "><(((º>" : "<º)))><";
+            if (f.x > W + 8) f.x = -8;
+            if (f.x < -8) f.x = W + 8;
+            var xi = Math.round(f.x);
+            for (k = 0; k < gl.length; k++) {
+              var cx = xi + k;
+              if (cx >= 0 && cx < W && f.y > 0 && f.y < H) g[f.y][cx] = gl.charAt(k);
+            }
+          });
+          return flat(g);
+        }
+      };
+
+      var splat = {
+        name: "gaussian-splat", speed: 60,
+        setup: function () { this.reset(); },
+        reset: function () {
+          this.p = [];
+          for (var i = 0; i < 80; i++) {
+            var a = Math.random() * Math.PI * 2, s = 0.2 + Math.random() * 1.2;
+            this.p.push({ x: W / 2, y: H / 2, vx: Math.cos(a) * s, vy: Math.sin(a) * s * 0.55 });
+          }
+          this.age = 0;
+        },
+        frame: function (t) {
+          this.age++;
+          if (this.age > 48) this.reset();
+          var g = grid(" "), d = this.age;
+          var ch = d < 8 ? "@" : d < 16 ? "O" : d < 26 ? "o" : d < 38 ? "*" : "·";
+          for (var i = 0; i < this.p.length; i++) {
+            var pt = this.p[i];
+            pt.x += pt.vx; pt.y += pt.vy;
+            var xi = Math.round(pt.x), yi = Math.round(pt.y);
+            if (xi >= 0 && xi < W && yi >= 0 && yi < H) g[yi][xi] = ch;
+          }
+          return flat(g);
+        }
+      };
+
+      var glitch = {
+        name: "signal-lost", speed: 70,
+        setup: function () {},
+        frame: function (t) {
+          var lines = ["", "", " 4 0 4 ", "", "P A G E   N O T   F O U N D", "", ""];
+          var cs = "!<>-_\\/[]{}=+*#01?%&@$";
+          var prog = (t % 44) / 28; // scramble -> resolve -> reset
+          return lines.map(function (line) {
+            return line.split("").map(function (chr) {
+              if (chr === " ") return " ";
+              return Math.random() < prog ? chr : cs.charAt(rnd(cs.length));
+            }).join("");
+          }).join("\n");
+        }
+      };
+
+      var ufo = frameScene("abducted", 170, [
+        String.raw`
+      .-"""""""-.
+    .'___________'.
+   /_______________\
+   \  (o) (o) (o)  /
+    '-._________.-'
+         \  |  /
+          \ | /
+           \|/
+         [ 404 ]
+`,
+        String.raw`
+      .-"""""""-.
+    .'___________'.
+   /_______________\
+   \  (-) (o) (-)  /
+    '-._________.-'
+          . | .
+          [ 404 ]
+
+
+
+`,
+        String.raw`
+      .-"""""""-.
+    .'___________'.
+   /_______________\
+   \  (o) (-) (o)  /
+    '-._[ 404 ]_.-'
+         \  |  /
+          \ | /
+
+
+
+
+`
+      ]);
+
+      var ghost = frameScene("the-ghost", 240, [
+        String.raw`
+    .-"""""-.
+   / o     o \
+   |    >    |
+   |  \___/  |
+   |         |
+    \_/\_/\_/
+`,
+        String.raw`
+
+    .-"""""-.
+   / -     - \
+   |    >    |
+   |  \___/  |
+   |         |
+    \_/\_/\_/
+`,
+        String.raw`
+    .-"""""-.
+   / o     o \
+   |    >    |
+   |  \___/  |
+   |         |
+    /\_/\_/\
+`
+      ]);
+
+      var SCENES = [astronaut, fish, splat, glitch, ufo, ghost];
+
+      var SUBS = [
+        "You drifted off the edge of the site.",
+        "This page rendered straight to /dev/null.",
+        "Lost in latent space — try the homepage.",
+        "The page got splatted. Reconstruction failed.",
+        "Ray missed every surface in the scene.",
+        "Out of distribution. Returning to a known sample?",
+        "404 photons traced, 0 of them hit this page.",
+        "This route never converged.",
+        "Page abducted by aliens. Inquiry ongoing.",
+        "This page gave up the ghost.",
+        "The pixels you are looking for are in another castle."
+      ];
+
+      // ---- run --------------------------------------------------------------
+      var el = document.getElementById("art");
+      var subEl = document.getElementById("sub");
+      var nameEl = document.getElementById("scene-name");
+      var timer = null, t = 0, scene = null;
+
+      function shuffle() {
+        if (timer) clearInterval(timer);
+        t = 0;
+        scene = pick(SCENES);
+        if (scene.setup) scene.setup();
+        subEl.textContent = pick(SUBS);
+        nameEl.textContent = scene.name;
+        el.textContent = scene.frame(t++);
+        timer = setInterval(function () { el.textContent = scene.frame(t++); }, scene.speed);
+      }
+
+      shuffle();
+
+      // reshuffle on interaction (but let real links work)
+      document.addEventListener("click", function (e) {
+        if (e.target.closest("a")) return;
+        shuffle();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Tab" || e.altKey || e.metaKey || e.ctrlKey) return;
+        shuffle();
+      });
+
+      // pause animation when the tab is hidden (saves battery on mobile)
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          if (timer) { clearInterval(timer); timer = null; }
+        } else if (!timer && scene) {
+          timer = setInterval(function () { el.textContent = scene.frame(t++); }, scene.speed);
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -109,6 +109,21 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  body {
+    margin: 1rem;
+  }
+
+  .paper-showcase .paper-info-grid {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .cocoen-container {
+    margin-bottom: 80px;
+  }
+}
+
 @media (max-width: 500px) {
   .low-resolution-warning {
     display: block;
