@@ -292,93 +292,12 @@
       function rnd(n) { return Math.floor(Math.random() * n); }
       function pick(a) { return a[rnd(a.length)]; }
 
-      // trim leading/trailing blank line, pad every line to equal width
-      function sprite(raw) {
-        var a = raw.replace(/^\n/, "").replace(/\n$/, "").split("\n");
-        var w = Math.max.apply(null, a.map(function (l) { return l.length; }));
-        return a.map(function (l) { return l + " ".repeat(w - l.length); });
-      }
-
-      // normalise a set of frames so all are the same width AND height
-      function padFrames(frames) {
-        var split = frames.map(function (f) {
-          return f.replace(/^\n/, "").replace(/\n$/, "").split("\n");
-        });
-        var w = 0, h = 0, i, j;
-        for (i = 0; i < split.length; i++) {
-          h = Math.max(h, split[i].length);
-          for (j = 0; j < split[i].length; j++) w = Math.max(w, split[i][j].length);
-        }
-        return split.map(function (rows) {
-          var r = rows.map(function (l) { return l + " ".repeat(w - l.length); });
-          while (r.length < h) r.push(" ".repeat(w));
-          return r.join("\n");
-        });
-      }
-
-      function blankField(density) {
-        var f = [], r, c, row;
-        for (r = 0; r < H; r++) {
-          row = [];
-          for (c = 0; c < W; c++) {
-            row.push(Math.random() < density ? (Math.random() < 0.5 ? "." : "*") : " ");
-          }
-          f.push(row);
-        }
-        return f;
-      }
-
-      // draw an OPAQUE sprite (its spaces clear the field) onto a field clone
-      function draw(field, spr, sx, sy) {
-        var g = field.map(function (row) { return row.slice(); });
-        for (var i = 0; i < spr.length; i++) {
-          var ry = sy + i;
-          if (ry < 0 || ry >= H) continue;
-          for (var c = 0; c < spr[i].length; c++) {
-            var cx = sx + c;
-            if (cx < 0 || cx >= W) continue;
-            g[ry][cx] = spr[i][c];
-          }
-        }
-        return g.map(function (row) { return row.join(""); }).join("\n");
-      }
-
       function grid(fill) {
         var g = [], r;
         for (r = 0; r < H; r++) g.push(new Array(W).fill(fill || " "));
         return g;
       }
       function flat(g) { return g.map(function (r) { return r.join(""); }).join("\n"); }
-
-      function frameScene(name, speed, frames) {
-        var F = padFrames(frames);
-        return { name: name, speed: speed, setup: function () {}, frame: function (t) { return F[t % F.length]; } };
-      }
-
-      var ASTRO = sprite(String.raw`
-   ___
-  /. .\
-  |   |
-  \ ~ /
- /|   |\
-  |   |
-  J   L
-`);
-
-      var astronaut = {
-        name: "lost-astronaut", speed: 90,
-        setup: function () { this.f = blankField(0.05); this.x = 6 + rnd(W - 24); },
-        frame: function (t) {
-          if (t % 2 === 0) {
-            var r = rnd(H), c = rnd(W);
-            this.f[r][c] = this.f[r][c] === " " ? (Math.random() < 0.5 ? "." : "*") : " ";
-          }
-          this.x += 0.6;
-          if (this.x > W) this.x = -ASTRO[0].length;
-          var y = Math.round(H / 2 - ASTRO.length / 2 + Math.sin(t / 7) * 1.6);
-          return draw(this.f, ASTRO, Math.round(this.x), y);
-        }
-      };
 
       var fish = {
         name: "gone-fishing", speed: 110,
@@ -457,110 +376,7 @@
         }
       };
 
-      var ufo = frameScene("abducted", 170, [
-        String.raw`
-      .-"""""""-.
-    .'___________'.
-   /_______________\
-   \  (o) (o) (o)  /
-    '-._________.-'
-         \  |  /
-          \ | /
-           \|/
-         [ 404 ]
-`,
-        String.raw`
-      .-"""""""-.
-    .'___________'.
-   /_______________\
-   \  (-) (o) (-)  /
-    '-._________.-'
-          . | .
-          [ 404 ]
-
-
-
-`,
-        String.raw`
-      .-"""""""-.
-    .'___________'.
-   /_______________\
-   \  (o) (-) (o)  /
-    '-._[ 404 ]_.-'
-         \  |  /
-          \ | /
-
-
-
-
-`
-      ]);
-
-      var ghost = frameScene("the-ghost", 240, [
-        String.raw`
-    .-"""""-.
-   / o     o \
-   |    >    |
-   |  \___/  |
-   |         |
-    \_/\_/\_/
-`,
-        String.raw`
-
-    .-"""""-.
-   / -     - \
-   |    >    |
-   |  \___/  |
-   |         |
-    \_/\_/\_/
-`,
-        String.raw`
-    .-"""""-.
-   / o     o \
-   |    >    |
-   |  \___/  |
-   |         |
-    /\_/\_/\
-`
-      ]);
-
       // --- research-themed scenes ---
-
-      // novel-view synthesis: a rotating wireframe cube (neural rendering)
-      var cube = {
-        name: "novel-view", speed: 70,
-        setup: function () {},
-        frame: function (t) {
-          var g = grid(" ");
-          var ay = t * 0.07, ax = t * 0.05;
-          var V = [[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
-          var E = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
-          var pts = V.map(function (v) {
-            var x = v[0] * Math.cos(ay) + v[2] * Math.sin(ay);
-            var z = -v[0] * Math.sin(ay) + v[2] * Math.cos(ay);
-            var y2 = v[1] * Math.cos(ax) - z * Math.sin(ax);
-            var z2 = v[1] * Math.sin(ax) + z * Math.cos(ax);
-            var f = 3.2 / (3.2 + z2);
-            return [Math.round(W / 2 + x * f * W * 0.16), Math.round(H / 2 - y2 * f * H * 0.30)];
-          });
-          var plot = function (x, y, ch) { if (x >= 0 && x < W && y >= 0 && y < H) g[y][x] = ch; };
-          var line = function (a, b, ch) {
-            var x0 = a[0], y0 = a[1], x1 = b[0], y1 = b[1];
-            var dx = Math.abs(x1 - x0), dy = Math.abs(y1 - y0);
-            var sx = x0 < x1 ? 1 : -1, sy = y0 < y1 ? 1 : -1, err = dx - dy;
-            for (;;) {
-              plot(x0, y0, ch);
-              if (x0 === x1 && y0 === y1) break;
-              var e2 = 2 * err;
-              if (e2 > -dy) { err -= dy; x0 += sx; }
-              if (e2 < dx) { err += dx; y0 += sy; }
-            }
-          };
-          E.forEach(function (e) { line(pts[e[0]], pts[e[1]], "#"); });
-          pts.forEach(function (p) { plot(p[0], p[1], "@"); });
-          return flat(g);
-        }
-      };
 
       // image denoising: static that pulses down to reveal a clean "404"
       var denoise = {
@@ -668,167 +484,36 @@
         }
       };
 
-      // Gaussian splatting + tomatoes: a point cloud reconstructs a tomato, then splats
-      var tomato = {
-        name: "splatted-tomato", speed: 55,
+      // Monte Carlo integration: darts estimate pi, the circle emerges
+      var montecarlo = {
+        name: "monte-carlo", speed: 55,
         setup: function () {
-          var art = [
-            "     \\ | /     ",
-            "    .-----.    ",
-            "   /#######\\   ",
-            "  |#########|  ",
-            "  |#########|  ",
-            "   \\#######/   ",
-            "    '-----'    "
-          ];
-          var w = Math.max.apply(null, art.map(function (s) { return s.length; }));
-          art = art.map(function (s) { return s + " ".repeat(w - s.length); });
-          var oy = Math.round((H - art.length) / 2), ox = Math.round((W - w) / 2);
-          var targets = [];
-          for (var r = 0; r < art.length; r++) for (var c = 0; c < w; c++) {
-            if (art[r].charAt(c) !== " ") targets.push([ox + c, oy + r]);
-          }
-          this.p = targets.map(function (tp) { return { x: rnd(W), y: rnd(H), vx: 0, vy: 0, tx: tp[0], ty: tp[1] }; });
-          this.cx = ox + w / 2; this.cy = oy + art.length / 2;
-          this.age = 0; this.mode = "reform";
+          this.buf = grid(" ");
+          this.inside = 0; this.total = 0; this.age = 0;
+          this.cy = Math.round((2 + (H - 1)) / 2);
+          this.ry = Math.floor(((H - 1) - 2) / 2);
+          this.rx = this.ry * 2;
+          this.cx = Math.round(W / 2);
         },
         frame: function (t) {
-          var self = this;
           this.age++;
-          if (this.mode === "reform" && this.age > 80) {
-            this.mode = "splat"; this.age = 0;
-            this.p.forEach(function (o) {
-              var a = Math.atan2(o.y - self.cy, o.x - self.cx) + (Math.random() - 0.5);
-              var s = 0.8 + Math.random() * 1.4;
-              o.vx = Math.cos(a) * s; o.vy = Math.sin(a) * s * 0.6;
-            });
-          } else if (this.mode === "splat" && this.age > 22) {
-            this.mode = "reform"; this.age = 0;
+          if (this.age > 130) this.setup();
+          for (var k = 0; k < 12; k++) {
+            var u = Math.random() * 2 - 1, v = Math.random() * 2 - 1; // uniform in [-1,1]^2
+            var inC = u * u + v * v <= 1;
+            this.total++; if (inC) this.inside++;
+            var x = Math.round(this.cx + u * this.rx), y = Math.round(this.cy + v * this.ry);
+            if (y >= 0 && y < H && x >= 0 && x < W) this.buf[y][x] = inC ? "*" : "·";
           }
-          var g = grid(" ");
-          this.p.forEach(function (o) {
-            if (self.mode === "splat") { o.x += o.vx; o.y += o.vy; }
-            else { o.x += (o.tx - o.x) * 0.14; o.y += (o.ty - o.y) * 0.14; }
-            var d = Math.abs(o.x - o.tx) + Math.abs(o.y - o.ty);
-            var ch = self.mode === "splat" ? (Math.random() < 0.5 ? "*" : "·")
-              : (d < 0.7 ? "@" : d < 2.5 ? "O" : d < 6 ? "o" : "·");
-            var xi = Math.round(o.x), yi = Math.round(o.y);
-            if (xi >= 0 && xi < W && yi >= 0 && yi < H) g[yi][xi] = ch;
-          });
+          var g = this.buf.map(function (row) { return row.slice(); });
+          var est = this.total ? (4 * this.inside / this.total) : 0;
+          var label = "monte carlo   π ≈ " + est.toFixed(3) + "   n=" + this.total;
+          for (var i = 0; i < label.length && i < W; i++) g[0][i] = label.charAt(i);
           return flat(g);
         }
       };
 
-      // seals lounging on a sunny beach with rolling waves
-      var beach = {
-        name: "seals-on-the-beach", speed: 150,
-        setup: function () { this.seals = [{ x: 8 }, { x: 24 }, { x: 42 }]; },
-        frame: function (t) {
-          var g = grid(" "), r, c;
-          // sun, top-right
-          var sun = [" \\|/ ", "-(O)-", " /|\\ "], sx = W - 7, sy = 1;
-          for (r = 0; r < sun.length; r++) for (c = 0; c < sun[r].length; c++) {
-            var sc = sun[r].charAt(c);
-            if (sc !== " ") { var yy = sy + r, xx = sx + c; if (yy >= 0 && yy < H && xx >= 0 && xx < W) g[yy][xx] = sc; }
-          }
-          var sand = 11;
-          for (c = 0; c < W; c++) g[sand][c] = "_";
-          // water with rolling waves
-          for (r = sand + 1; r < H; r++) for (c = 0; c < W; c++) {
-            g[r][c] = Math.sin((c + t * (r - sand)) / 3) > 0.2 ? "~" : " ";
-          }
-          // seals (blink every so often, gentle bob)
-          var blink = (t % 18) < 2;
-          var spr = blink ? ["  __ ", " (--)", " /__\\"] : ["  __ ", " (oo)", " /__\\"];
-          this.seals.forEach(function (s, i) {
-            var bob = Math.sin(t / 6 + i) > 0.6 ? -1 : 0;
-            for (var rr = 0; rr < spr.length; rr++) for (var cc = 0; cc < spr[rr].length; cc++) {
-              var ch = spr[rr].charAt(cc);
-              if (ch === " ") continue;
-              var yy = sand - spr.length + rr + bob, xx = s.x + cc;
-              if (yy >= 0 && yy < H && xx >= 0 && xx < W) g[yy][xx] = ch;
-            }
-          });
-          return flat(g);
-        }
-      };
-
-      // a corgi sprinting across the screen
-      var corgi = {
-        name: "running-corgi", speed: 80,
-        setup: function () { this.x = 4 + rnd(W - 26); },
-        frame: function (t) {
-          var g = grid(" "), c;
-          var groundY = H - 2;
-          for (c = 0; c < W; c++) g[groundY][c] = "_";
-          var legA = Math.floor(t / 2) % 2 === 0;
-          var spr = [
-            "  ^___    ",
-            " ~/o  \\_  ",
-            " /______\\ ",
-            legA ? " | |  | | " : "  ||  ||  "
-          ];
-          this.x += 1.3;
-          if (this.x > W + 2) this.x = -12;
-          var px = Math.round(this.x), top = groundY - spr.length + 1;
-          for (var r = 0; r < spr.length; r++) for (c = 0; c < spr[r].length; c++) {
-            var ch = spr[r].charAt(c);
-            if (ch === " ") continue;
-            var xx = px + c, yy = top + r;
-            if (xx >= 0 && xx < W && yy >= 0 && yy < H) g[yy][xx] = ch;
-          }
-          // little dust puff trailing the paws
-          if (Math.floor(t) % 2 === 0) { var dx = px - 2; if (dx > 0 && dx < W) g[groundY - 1][dx] = "·"; }
-          return flat(g);
-        }
-      };
-
-      // ray-traced ice cube with subsurface-scattering sparkle, slowly melting
-      var ice = {
-        name: "ray-traced-ice", speed: 90,
-        setup: function () { this.age = 0; this.drips = []; },
-        frame: function (t) {
-          this.age++;
-          var melt = (this.age % 140) / 140; // 0 -> 1, then refreeze
-          if (this.age % 140 === 0) this.drips = [];
-          var g = grid(" "), r, c;
-          var art = [
-            "   ______   ",
-            "  /     /|  ",
-            " /_____/ |  ",
-            " |     | |  ",
-            " |  *  | /  ",
-            " |_____|/   "
-          ];
-          var ox = Math.round(W / 2 - 6), oy = 2;
-          var visible = Math.max(1, Math.round(art.length * (1 - melt * 0.8)));
-          for (r = 0; r < visible; r++) for (c = 0; c < art[r].length; c++) {
-            var ch = art[r].charAt(c);
-            if (ch === " ") continue;
-            var yy = oy + r, xx = ox + c;
-            if (yy >= 0 && yy < H && xx >= 0 && xx < W) g[yy][xx] = ch;
-          }
-          // subsurface scattering: sparkle inside the ice
-          for (var k = 0; k < 3; k++) {
-            var sr = oy + 1 + rnd(Math.max(1, visible - 1)), sc = ox + 2 + rnd(8);
-            if (sr >= 0 && sr < H && sc >= 0 && sc < W && g[sr][sc] === " ") g[sr][sc] = Math.random() < 0.5 ? "." : "*";
-          }
-          // drips falling from the melting underside
-          var puddleY = H - 1;
-          if (t % 3 === 0) this.drips.push({ x: ox + 2 + rnd(8), y: oy + visible });
-          this.drips = this.drips.filter(function (d) { return d.y < puddleY; });
-          this.drips.forEach(function (d) {
-            d.y += 1;
-            if (d.y >= 0 && d.y < H && d.x >= 0 && d.x < W) g[d.y][d.x] = "o";
-          });
-          // a puddle that spreads as it melts
-          var pw = Math.round(melt * 14), mid = Math.round(W / 2);
-          for (c = mid - pw; c <= mid + pw; c++) if (c >= 0 && c < W) g[puddleY][c] = "~";
-          return flat(g);
-        }
-      };
-
-      var SCENES = [fish, splat, glitch, ufo, ghost, cube, denoise, photon, splatfit, relight, tomato, beach, corgi, ice];
+      var SCENES = [fish, splat, glitch, denoise, photon, splatfit, relight, montecarlo];
 
       var SUBS = [
         "Lost in latent space, try the homepage.",
