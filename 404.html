@@ -484,36 +484,7 @@
         }
       };
 
-      // Monte Carlo integration: darts estimate pi, the circle emerges
-      var montecarlo = {
-        name: "monte-carlo", speed: 55,
-        setup: function () {
-          this.buf = grid(" ");
-          this.inside = 0; this.total = 0; this.age = 0;
-          this.cy = Math.round((2 + (H - 1)) / 2);
-          this.ry = Math.floor(((H - 1) - 2) / 2);
-          this.rx = this.ry * 2;
-          this.cx = Math.round(W / 2);
-        },
-        frame: function (t) {
-          this.age++;
-          if (this.age > 130) this.setup();
-          for (var k = 0; k < 12; k++) {
-            var u = Math.random() * 2 - 1, v = Math.random() * 2 - 1; // uniform in [-1,1]^2
-            var inC = u * u + v * v <= 1;
-            this.total++; if (inC) this.inside++;
-            var x = Math.round(this.cx + u * this.rx), y = Math.round(this.cy + v * this.ry);
-            if (y >= 0 && y < H && x >= 0 && x < W) this.buf[y][x] = inC ? "*" : "·";
-          }
-          var g = this.buf.map(function (row) { return row.slice(); });
-          var est = this.total ? (4 * this.inside / this.total) : 0;
-          var label = "monte carlo   π ≈ " + est.toFixed(3) + "   n=" + this.total;
-          for (var i = 0; i < label.length && i < W; i++) g[0][i] = label.charAt(i);
-          return flat(g);
-        }
-      };
-
-      var SCENES = [fish, splat, glitch, denoise, photon, splatfit, relight, montecarlo];
+      var SCENES = [fish, splat, glitch, denoise, photon, splatfit, relight];
 
       var SUBS = [
         "Lost in latent space, try the homepage.",
