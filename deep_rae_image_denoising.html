@@ -1,16 +1,32 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
-	<script defer src="https://cloud.umami.is/script.js" data-website-id="11350306-7d79-4d9b-881a-e7cd95c79d61"></script>
-  	<meta charset="UTF-8">
- 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="description" content="">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Deep Residual Autoencoder for Real Image Denoising — Doğa Yılmaz</title>
+	<meta name="description" content="Deep Residual Autoencoder for Real Image Denoising: Doğa Yılmaz's bachelor's thesis on a deep convolutional autoencoder with symmetric residual connections for blind real-world image denoising, with interactive before/after demos.">
+	<meta name="author" content="Doğa Yılmaz">
+	<link rel="canonical" href="https://yilmazdoga.net/deep_rae_image_denoising.html">
+
+	<!-- Open Graph / social sharing -->
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://yilmazdoga.net/deep_rae_image_denoising.html">
+	<meta property="og:title" content="Deep Residual Autoencoder for Real Image Denoising">
+	<meta property="og:description" content="A deep convolutional autoencoder with symmetric residual connections for blind real-world image denoising.">
+	<meta property="og:image" content="https://yilmazdoga.net/assets/images/projects/deep_rae/paper_image.webp">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Deep Residual Autoencoder for Real Image Denoising">
+	<meta name="twitter:description" content="A deep convolutional autoencoder with symmetric residual connections for blind real-world image denoising.">
+	<meta name="twitter:image" content="https://yilmazdoga.net/assets/images/projects/deep_rae/paper_image.webp">
+
+	<link rel="preconnect" href="https://cloud.umami.is">
+	<link rel="preload" href="assets/fonts/linux_biolinum/LinBiolinum_R.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/cocoen.min.css">
 	<link rel="stylesheet" href="css/deep_rae_image_denoising.css">
-	<title>Deep Residual Autoencoder for Real Image Denoising</title>
+
+	<script defer src="https://cloud.umami.is/script.js" data-website-id="11350306-7d79-4d9b-881a-e7cd95c79d61"></script>
 </head>
 
 <body>
@@ -38,14 +54,14 @@
 		<div class="paper-showcase paper-info-grid">
 
 			<div class="paper-showcase paper-img">
-				<img src="assets/images/DRA_paper_image.jpg" alt="paper_image">
+				<img src="assets/images/projects/deep_rae/paper_image.webp" alt="paper_image">
 			</div>
 			<div class="paper-showcase paper-info">
 				<h3>Bachelor’s Thesis</h3>
 				<p><strong>Title:</strong> <em>Deep Residual Autoencoder for Real Image Denoising</em></p>
 				<p><strong>Author:</strong> Doğa Yılmaz</p>
 				<p><strong>Supervisor:</strong> Assist. Prof. Furkan Kıraç</p>
-				<a href="assets/deep_residual_autoencoder_for_real_image_denoising.pdf" class="cv-button">View Thesis
+				<a href="assets/documents/deep_residual_autoencoder_for_real_image_denoising.pdf" class="cv-button">View Thesis
 					(PDF)</a>
 				<a href="https://github.com/yilmazdoga/Deep_Residual_Autoencoder_for_Real_Image_Denoising"
 					class="cv-button">View Code on GitHub</a>
@@ -70,50 +86,48 @@
 			<option value="compare6">Example 3: Ground-Truth vs Noisy</option>
 		</select>
 
-		<div id="compare0" class=".cocoen-container">
-			<div id="compare0" class="cocoen">
-				<img src="assets/images/DRA_Examples/GT_0.png" alt="Ground-Truth">
-				<img src="assets/images/DRA_Examples/NOISY_0.png" alt="Noisy">
-			</div>
+		<div id="compare0" class="cocoen">
+			<img src="assets/images/projects/deep_rae/examples/GT_0.webp" alt="Ground-Truth">
+			<img src="assets/images/projects/deep_rae/examples/NOISY_0.webp" alt="Noisy">
 		</div>
 
 		<div id="compare1" class="cocoen">
-			<img src="assets/images/DRA_Examples/DENOISED_0.png" alt="Denoised">
-			<img src="assets/images/DRA_Examples/NOISY_0.png" alt="Noisy">
+			<img src="assets/images/projects/deep_rae/examples/DENOISED_0.webp" alt="Denoised">
+			<img src="assets/images/projects/deep_rae/examples/NOISY_0.webp" alt="Noisy">
 		</div>
 
 		<div id="compare2" class="cocoen">
-			<img src="assets/images/DRA_Examples/GT_0.png" alt="Ground-Truth">
-			<img src="assets/images/DRA_Examples/DENOISED_0.png" alt="Denoised">
+			<img src="assets/images/projects/deep_rae/examples/GT_0.webp" alt="Ground-Truth">
+			<img src="assets/images/projects/deep_rae/examples/DENOISED_0.webp" alt="Denoised">
 		</div>
 
 		<div id="compare3" class="cocoen">
-			<img src="assets/images/DRA_Examples/GT_1.png" alt="Ground-Truth">
-			<img src="assets/images/DRA_Examples/NOISY_1.png" alt="Noisy">
+			<img src="assets/images/projects/deep_rae/examples/GT_1.webp" alt="Ground-Truth">
+			<img src="assets/images/projects/deep_rae/examples/NOISY_1.webp" alt="Noisy">
 		</div>
 
 		<div id="compare4" class="cocoen">
-			<img src="assets/images/DRA_Examples/DENOISED_1.png" alt="Denoised">
-			<img src="assets/images/DRA_Examples/NOISY_1.png" alt="Noisy">
+			<img src="assets/images/projects/deep_rae/examples/DENOISED_1.webp" alt="Denoised">
+			<img src="assets/images/projects/deep_rae/examples/NOISY_1.webp" alt="Noisy">
 		</div>
 
 		<div id="compare5" class="cocoen">
-			<img src="assets/images/DRA_Examples/GT_1.png" alt="Ground-Truth">
-			<img src="assets/images/DRA_Examples/DENOISED_1.png" alt="Denoised">
+			<img src="assets/images/projects/deep_rae/examples/GT_1.webp" alt="Ground-Truth">
+			<img src="assets/images/projects/deep_rae/examples/DENOISED_1.webp" alt="Denoised">
 		</div>
 		<div id="compare6" class="cocoen">
-			<img src="assets/images/DRA_Examples/GT_2.png" alt="Ground-Truth">
-			<img src="assets/images/DRA_Examples/NOISY_2.png" alt="Noisy">
+			<img src="assets/images/projects/deep_rae/examples/GT_2.webp" alt="Ground-Truth">
+			<img src="assets/images/projects/deep_rae/examples/NOISY_2.webp" alt="Noisy">
 		</div>
 
 		<div id="compare7" class="cocoen">
-			<img src="assets/images/DRA_Examples/DENOISED_2.png" alt="Denoised">
-			<img src="assets/images/DRA_Examples/NOISY_2.png" alt="Noisy">
+			<img src="assets/images/projects/deep_rae/examples/DENOISED_2.webp" alt="Denoised">
+			<img src="assets/images/projects/deep_rae/examples/NOISY_2.webp" alt="Noisy">
 		</div>
 
 		<div id="compare8" class="cocoen">
-			<img src="assets/images/DRA_Examples/GT_2.png" alt="Ground-Truth">
-			<img src="assets/images/DRA_Examples/DENOISED_2.png" alt="Denoised">
+			<img src="assets/images/projects/deep_rae/examples/GT_2.webp" alt="Ground-Truth">
+			<img src="assets/images/projects/deep_rae/examples/DENOISED_2.webp" alt="Denoised">
 		</div>
 	</div>
 
