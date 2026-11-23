@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('mouseover', (event) => {
         const paperDiv = event.target.closest('.cv-element, .paper-container');
         if (paperDiv) {
+            const video = paperDiv.querySelector('video');
+            if (video) {
+                video.play().catch(() => {}); // play() rejects if a quick mouseout pauses it before it starts
+                return;
+            }
             const image = paperDiv.querySelector('img');
             if (image) {
                 const hoverSrc = image.getAttribute('data-hover');
@@ -63,6 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('mouseout', (event) => {
         const paperDiv = event.target.closest('.cv-element, .paper-container');
         if (paperDiv) {
+            const video = paperDiv.querySelector('video');
+            if (video) {
+                if (!paperDiv.contains(event.relatedTarget)) { // ignore moves between parts of the same entry
+                    video.pause();
+                    video.currentTime = 0; // back to the first frame, which matches the poster
+                }
+                return;
+            }
             const image = paperDiv.querySelector('img');
             if (image && image.dataset.originalSrc) {
                 image.src = image.dataset.originalSrc; // Restore the original src
